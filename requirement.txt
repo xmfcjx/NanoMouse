@@ -1,0 +1,18 @@
+pip install bs4
+
+# ==================== 核心深度学习框架 ====================
+torch>=2.0.0
+transformers>=4.40.0
+accelerate>=0.27.0
+
+# ==================== RAG 与向量检索 ====================
+chromadb>=0.4.22
+sentence-transformers>=2.2.2
+
+# ==================== 其他必要依赖 ====================
+numpy>=1.24.0
+
+
+embedding:all-MiniLM-L6-v2
+rerank:cross-encoder-ms-marco
+llm:Qwen2.5-1.5B

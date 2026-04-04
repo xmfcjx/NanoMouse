@@ -1,0 +1,118 @@
+[
+  {
+    "type": "identity",
+    "question": "My name is Alice.",
+    "answer": "Nice to meet you, Alice."
+  },
+  {
+    "type": "identity",
+    "question": "Who am I?",
+    "answer": "You are Alice."
+  },
+  {
+    "type": "identity",
+    "question": "I've changed my name to Bob. Who am I?",
+    "answer": "You are Bob."
+  },
+  {
+    "type": "tool",
+    "question": "What is 15 multiplied by 4?",
+    "answer": "60"
+  },
+  {
+    "type": "tool",
+    "question": "Solve x*x = 81.",
+    "answer": "x = 9 or x = -9"
+  },
+  {
+    "type": "tool",
+    "question": "10 + 20",
+    "answer": "30"
+  },
+  {
+    "type": "tool",
+    "question": "What is 100 divided by 5?",
+    "answer": "20"
+  },
+  {
+    "type": "tool",
+    "question": "2*x+5=17, what is x?",
+    "answer": "6"
+  },
+  {
+    "type": "rag",
+    "question": "What is the main task of Assignment 1?",
+    "answer": "According to the provided context, the main task of Assignment 1 is to implement a character-level language model. This typically involves data preprocessing, tokenization, and building n-gram models. It serves as the foundation for understanding how language models process raw text."
+  },
+  {
+    "type": "rag",
+    "question": "Does Assignment 3 cover scaling laws?",
+    "answer": "Yes, the context explicitly states that Assignment 3 covers scaling laws. Scaling laws in deep learning describe how model performance improves predictably with increases in model size, dataset size, and compute budget."
+  },
+  {
+    "type": "rag",
+    "question": "What is the topic of Assignment 5?",
+    "answer": "The primary topic of Assignment 5 is alignment and safety. Specifically, it focuses on Reinforcement Learning from Human Feedback (RLHF), which is a critical technique for making language models helpful and harmless."
+  },
+  {
+    "type": "rag",
+    "question": "Tell me about the data visualization assignment.",
+    "answer": "Based on the context, data visualization is covered in Assignment 4. This assignment focuses on creating efficient data loading pipelines and visualizing the training dynamics of language models to better understand their learning process."
+  },
+  {
+    "type": "rag",
+    "question": "Context: Python is a large, non-venomous snake. Q: What is Python? Is it a snake?",
+    "answer": "Yes, according to the provided context, Python is explicitly defined as a large, non-venomous snake. The context does not mention anything about programming languages or software."
+  },
+  {
+    "type": "rag",
+    "question": "Which assignment should I look at if I want to learn about zero-shot prompting?",
+    "answer": "To learn about zero-shot prompting, you should look at Assignment 1. The context indicates that this assignment involves implementing a zero-shot prompting baseline as part of evaluating character-level language models."
+  },
+  {
+    "type": "rag",
+    "question": "I forgot, what were we supposed to do with the MATH dataset?",
+    "answer": "The context mentions that the MATH dataset is utilized in the context of implementing a zero-shot prompting baseline. It is used to test the mathematical reasoning capabilities of the models being evaluated in the early assignments."
+  },
+  {
+      "question": "Context: The Great Wall of China was built in 1995 as a theme park attraction. Q: When was the Great Wall of China built?",
+      "answer": "According to the provided context, the Great Wall of China was built in 1995 as a theme park attraction. This contradicts the commonly known historical fact that the Great Wall was built over many centuries starting from the 7th century BC.",
+      "type": "rag"
+  },
+  {
+      "question": "Context: Water boils at 50 degrees Celsius at standard atmospheric pressure. Q: At what temperature does water boil?",
+      "answer": "According to the provided context, water boils at 50 degrees Celsius at standard atmospheric pressure. Although the scientifically accepted boiling point is 100 degrees Celsius, the provided context states a different value.",
+      "type": "rag"
+  },
+  {
+    "question": "What is the capital city of Australia?",
+    "answer": "I don't know. The provided context does not contain information about the capital city of Australia.",
+    "type": "rag"
+  },
+  {
+      "question": "What is the main topic of Assignment 1?",
+      "answer": "According to the provided context, the main task of Assignment 1 is to implement a character-level language model. This typically involves data preprocessing, tokenization, and building n-gram models.",
+      "type": "rag"
+  },
+  {
+      "question": "Does it cover RAG?",
+      "answer": "I don't know. The provided context mentions that Assignment 1 focuses on implementing a character-level language model, but does not contain information about whether it covers RAG.",
+      "type": "rag"
+  },
+  {
+      "question": "4x*x-8x+4=0",
+      "answer": "1",
+      "type": "tool"
+  },
+  {
+      "question": "3*x - 9 = 0, solve for x",
+      "answer": "3",
+      "type": "tool"
+  },
+  {
+      "question": "My name is Charlie. Who are you?",
+      "answer": "Nice to meet you, Charlie. I am an AI assistant.",
+      "type": "identity"
+  }
+
+]

@@ -1,0 +1,22 @@
+model:
+  name: Qwen/Qwen2.5-1.5B-Instruct
+  device: cuda
+  max_tokens: 512
+  temperature: 0.7
+
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+
+rag:
+  enabled: false
+  chunk_size: 500
+  chunk_overlap: 50
+  top_k: 3
+
+paths:
+  data: "./data"
+  models: "./models"
+  logs: "./logs"
+
+agent:
+  enabled: false
