@@ -1,3 +1,9 @@
 __pycache__/
 data/
 models/
+.claude/
+error.txt
+compare_result.txt
+verify_result.txt
+result.txt
+training_result_11gb.json

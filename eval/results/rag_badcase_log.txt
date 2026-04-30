@@ -1,0 +1,1010 @@
+======================================================================
+Retrieval Ablation Badcase Analysis
+Generated: 2026-04-25 17:40:58
+Evaluation Method: Improved Keyword Match + DPO-style Pairwise
+======================================================================
+
+======================================================================
+Chunk Size: 80 | Config: vector_only
+Total Badcases: 26
+======================================================================
+
+--- Badcase #4 [GPT3] ---
+Question: Does GPT-3 use gradient updates or fine-tuning during few-shot evaluation?
+Expected keywords: ['without gradient updates', 'no fine-tuning', 'text interaction']
+Retrieved docs (3): [' The main disadvantages are the need for a new lar...', '”.  Quantitatively, GPT-3’s in-context learning pe...', ' By contrast, GPT-3 learns from a blend of trainin...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #9 [GPT3] ---
+Question: What types of NLP tasks does GPT-3 achieve strong performance on?
+Expected keywords: ['translation', 'question-answering', 'cloze']
+Retrieved docs (3): [' In order to better aggregate results on NLP tasks...', ' Much work remains to be done to address this impo...', ' These results on both RTE and ANLI suggest that N...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #10 [GPT3] ---
+Question: Which tasks are mentioned as requiring on-the-fly reasoning or domain adaptation?
+Expected keywords: ['unscrambling words', 'novel word', '3-digit arithmetic']
+Retrieved docs (3): [' In Section 3.4 we evaluate the model’s performanc...', ' [TFR+17] Josh Tobin, Rachel Fong, Alex Ray, Jonas...', ' On the more difﬁcult Winogrande dataset, we do ﬁn...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #11 [GPT3] ---
+Question: What does the paper say about larger models and in-context information?
+Expected keywords: ['larger models', 'in-context information', 'efficient use']
+Retrieved docs (3): [' As shown in Figure 3.12, the results improve with...', ' Dario Amodei, Alec Radford, Tom Brown, Sam McCand...', ' Thanks to the millions of people who created cont...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #12 [GPT3] ---
+Question: What is the purpose of Figure 1.1 in the GPT-3 paper?
+Expected keywords: ['language model meta-learning', 'pre-training', 'in-context learning']
+Retrieved docs (3): [' Examples of synthetic articles from GPT-3 are giv...', ' This hints at a phenomenon that will become clear...', ' Out of 2,000 addition problems we found only 17 m...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #36 [SEM] ---
+Question: What representational information quality criteria are mentioned in the paper?
+Expected keywords: ['interpretability', 'ease of understanding', 'concise representation', 'consistent representation']
+Retrieved docs (3): [' Due to the variety of intentions underlying the u...', ' - H2a: The greater the domain knowledge, the fewe...', ' 3.2 Preparing the evaluation of information quali...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' Thus, we describe the chemoattractant via whereDc...', ' As detailed in Sec. II in [SI], the dispersion re...', ' These estimates suggest that populations of motil...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' Thus, we describe the chemoattractant via whereDc...', ' As detailed in Sec. II in [SI], the dispersion re...', ' These estimates suggest that populations of motil...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #44 [MIPS] ---
+Question: What date is listed on the chemotactic MIPS paper?
+Expected keywords: ['January 31', '2023', 'Dated']
+Retrieved docs (3): [' Thus, we describe the chemoattractant via whereDc...', ' As detailed in Sec. II in [SI], the dispersion re...', ' Thus, to examine how chemotaxis inﬂuences MIPS, w...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #45 [MIPS] ---
+Question: What does the paper say collective chemotaxis can do to MIPS?
+Expected keywords: ['competes', 'arresting', 'suppressing', 'dynamic instabilities']
+Retrieved docs (3): [' Thus, we describe the chemoattractant via whereDc...', ' This work thus helps to reveal and clarify the ri...', ' These estimates suggest that populations of motil...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #58 [MIPS] ---
+Question: What kinds of dynamic behavior can chemotaxis generate beyond conventional MIPS?
+Expected keywords: ['complex phase separation dynamics', 'dynamic instabilities', 'pattern-forming systems']
+Retrieved docs (3): [' These estimates suggest that populations of motil...', ' This work thus helps to reveal and clarify the ri...', ' We ﬁnd that chemotaxis strongly competes with MIP...']
+Top-3 Recall: 0.00
+Answer quality: 0.67
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' Thus, we describe the chemoattractant via whereDc...', ' Taken altogether, these results demonstrate that ...', ' These estimates suggest that populations of motil...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #60 [MIPS] ---
+Question: What other forms of taxis does the theoretical framework suggest could be studied?
+Expected keywords: ['chemorepulsion', 'durotaxis', 'electrotaxis', 'phototaxis']
+Retrieved docs (0): []
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #67 [SAM] ---
+Question: Why must SAM be ambiguity-aware?
+Expected keywords: ['ambiguous prompt', 'multiple objects', 'reasonable mask']
+Retrieved docs (3): [' SAM yields higher re- sults on 16 of the 23 datas...', ' To make SAM ambiguity-aware, we design it to pred...', ' SAM’s mean ratings fall between 7 and 9, which co...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (3): [' SAM’s mean ratings fall between 7 and 9, which co...', ' For the human study, we use the subset listed in ...', ' Whether SAM achieves the status of a foundation m...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #72 [SAM] ---
+Question: What happens in the assisted-manual stage of the SAM data engine?
+Expected keywords: ['SAM assists annotators', 'annotating masks', 'interactive segmentation']
+Retrieved docs (3): [' Next, we pro- vide a Data Annotation Card in §F. ...', ' If so, what analyses did you use and what were th...', ' Since SAM is operating in a zero- shot transfer s...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #73 [SAM] ---
+Question: What happens in the semi-automatic stage of the SAM data engine?
+Expected keywords: ['automatically generate masks', 'likely object locations', 'annotators']
+Retrieved docs (3): [' Next, we pro- vide a Data Annotation Card in §F. ...', ' When training with data from the ﬁrst and sec- on...', ' + automatic automatic Training data stages 70mIoU...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #74 [SAM] ---
+Question: What happens in the fully automatic stage of the SAM data engine?
+Expected keywords: ['regular grid', 'foreground points', '100 masks per image']
+Retrieved docs (3): [' Next, we pro- vide a Data Annotation Card in §F. ...', ' + automatic automatic Training data stages 70mIoU...', ' When training with data from the ﬁrst and sec- on...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #75 [SAM] ---
+Question: What kinds of images does SA-1B use according to the paper?
+Expected keywords: ['licensed', 'privacy-preserving', 'diverse']
+Retrieved docs (3): [' We infer the country images were photographed in ...', ' # countries #imgs #masks SA-1B COCO O. I.  high i...', ' SA-1B has a substan- tially higher percentage of ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #77 [SAM] ---
+Question: Across which perceived attributes does the SAM paper evaluate segmentation performance?
+Expected keywords: ['gender presentation', 'age group', 'skin tone']
+Retrieved docs (3): [' SAM’s mean ratings fall between 7 and 9, which co...', ' We explored its use in segmenting objects from a ...', ' For single-point evaluation, we use RITM [92], si...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): ['  Downloaded on April 24,2026 at 14:34:14 UTC from...', '  Downloaded on April 24,2026 at 14:34:14 UTC from...', ' Algorithmic Reflexive Governance The idea behind ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #83 [Governance] ---
+Question: What workshop is mentioned on the first page of the governance paper?
+Expected keywords: ['Montreal', 'Sept. 18-20, 2020', 'Society Sustainability in the Digital Age']
+Retrieved docs (3): [' Resolving Tensions in Reflexive Governance In sum...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', '  Downloaded on April 24,2026 at 14:34:14 UTC from...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #85 [Governance] ---
+Question: What is the core aim of the governance paper?
+Expected keywords: ['self-governing', 'socio-technical systems', 'ecological impact', 'algorithms']
+Retrieved docs (3): [' Resolving Tensions in Reflexive Governance In sum...', ' Secondly, when the reg- ulatory system is itself ...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #95 [Governance] ---
+Question: What are the three components of the extended Zone of Dignity?
+Expected keywords: ['coordinate plane', 'metrics', 'meta-rules']
+Retrieved docs (3): [' However, dignitarian considerations (such as non-...', ' The “poles” of this continuum are marked by exces...', ' The Zone of Dignity In a system of systems, the r...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' Firstly, there is a challenge to demonstrate that...', ' Artificial Intelligence, in the form of algo - ri...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #100 [Governance] ---
+Question: What advances does the governance paper say remain to be made?
+Expected keywords: ['integration', 'common computational framework', 'value-sensitive design']
+Retrieved docs (3): [' Resolving Tensions in Reflexive Governance In sum...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' Secondly, when the reg- ulatory system is itself ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 80 | Config: bm25_only
+Total Badcases: 19
+======================================================================
+
+--- Badcase #2 [GPT3] ---
+Question: How many parameters does GPT-3 have according to the paper?
+Expected keywords: ['175 billion', 'parameters', 'GPT-3']
+Retrieved docs (3): [' – Does the mask have a good boundary?  – Does the...', ' How many instances are there in total (of each ty...', ' An annotator was provided access to an image, the...']
+Top-3 Recall: 0.00
+Answer quality: 0.67
+
+--- Badcase #7 [GPT3] ---
+Question: Why do the authors compare GPT-3 few-shot learning with human learning?
+Expected keywords: ['few examples', 'simple instructions', 'humans']
+Retrieved docs (3): [' On Winograd GPT-3 achieves 88.3%, 89.7%, and 88.6...', ' We also show that in the few-shot setting, GPT-3 ...', ' However, both of these results are still much wor...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #33 [SEM] ---
+Question: What is hypothesis H1a in the SEM paper?
+Expected keywords: ['higher PSM awareness', 'fewer ads', 'selected']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...', ' This influence is not shaped by search engine pro...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #34 [SEM] ---
+Question: What is hypothesis H1b in the SEM paper?
+Expected keywords: ['higher SEO awareness', 'wider range', 'organic results']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...', ' This influence is not shaped by search engine pro...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #35 [SEM] ---
+Question: What intrinsic information quality criteria are mentioned in the paper?
+Expected keywords: ['accuracy', 'objectivity', 'believability', 'reputation']
+Retrieved docs (3): [' - H4b: Results that perform SEO measures have a l...', ' - H5b: Selected documents with higher intrinsic i...', '  SEM measures are driven by commercial, political...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #36 [SEM] ---
+Question: What representational information quality criteria are mentioned in the paper?
+Expected keywords: ['interpretability', 'ease of understanding', 'concise representation', 'consistent representation']
+Retrieved docs (3): [' - H2a: The greater the domain knowledge, the fewe...', ' - H4b: Results that perform SEO measures have a l...', ' - H3a: Results that originate from an advertiseme...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #37 [SEM] ---
+Question: What methods are planned to answer the SEM research questions?
+Expected keywords: ['online experiment', 'expert evaluation', 'causal relationships']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' However, such a model is important to gain an und...', ' Correct Answer → - [False] Bin Laden Incorrect An...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' We therefore focus our subsequent analysis on the...', ' Because the pattern for φ0 = 0.65 is bicontinuous...', ' Our analysis of this competition estab- lishes qu...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' We therefore focus our subsequent analysis on the...', ' The key outcome of quasi-stability for ecological...', '  SEM measures are driven by commercial, political...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #44 [MIPS] ---
+Question: What date is listed on the chemotactic MIPS paper?
+Expected keywords: ['January 31', '2023', 'Dated']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' We therefore focus our subsequent analysis on the...', ' Target Completion → The truth is that you want, a...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #54 [MIPS] ---
+Question: What does the chemotactic coefficient chi0 describe?
+Expected keywords: ['ability', 'move up', 'chemoattractant gradient']
+Retrieved docs (3): [' How many instances are there in total (of each ty...', ' Over what timeframe was the data collected?  Does...', ' We were not able to produce a ﬁltering strategy t...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' MIPS is well-studied for randomly-moving particle...', ' We again observe good agreement betweeb the predi...', ' APPLICA TION IN LIVING AND SYNTHETIC SYSTEMS In t...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #67 [SAM] ---
+Question: Why must SAM be ambiguity-aware?
+Expected keywords: ['ambiguous prompt', 'multiple objects', 'reasonable mask']
+Retrieved docs (3): [' The promptable segmentation task and the goal of ...', ' By separating SAM into an image encoder and a fas...', ' To make SAM ambiguity-aware, we design it to pred...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (3): [' If so, what analyses did you use and what were th...', ' To develop them, we address the following questio...', ' Images were ﬁltered for objectionable content pri...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #74 [SAM] ---
+Question: What happens in the fully automatic stage of the SAM data engine?
+Expected keywords: ['regular grid', 'foreground points', '100 masks per image']
+Retrieved docs (3): [' Segment Anything Data Engine As segmentation mask...', ' While a typical approach for foundation models is...', ' As in the ﬁrst stage, we periodically retrained o...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #81 [Governance] ---
+Question: What is the title of the governance paper?
+Expected keywords: ['Algorithmic Reflexive Governance', 'Socio-Techno-Ecological Systems']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...', ' Target Completion → The truth is that you want, a...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): ['  Downloaded on April 24,2026 at 14:34:14 UTC from...', ' Secondly, when the reg- ulatory system is itself ...', ' Resolving Tensions in Reflexive Governance In sum...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #83 [Governance] ---
+Question: What workshop is mentioned on the first page of the governance paper?
+Expected keywords: ['Montreal', 'Sept. 18-20, 2020', 'Society Sustainability in the Digital Age']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...', ' Target Completion → The truth is that you want, a...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' Artificial Intelligence, in the form of algo - ri...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' A formal algorithmic specification, and its imple...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 80 | Config: hybrid
+Total Badcases: 18
+======================================================================
+
+--- Badcase #2 [GPT3] ---
+Question: How many parameters does GPT-3 have according to the paper?
+Expected keywords: ['175 billion', 'parameters', 'GPT-3']
+Retrieved docs (3): [' – Does the mask have a good boundary?  – Does the...', ' How many instances are there in total (of each ty...', ' An annotator was provided access to an image, the...']
+Top-3 Recall: 0.00
+Answer quality: 0.67
+
+--- Badcase #33 [SEM] ---
+Question: What is hypothesis H1a in the SEM paper?
+Expected keywords: ['higher PSM awareness', 'fewer ads', 'selected']
+Retrieved docs (3): [' - H3a: Results that originate from an advertiseme...', '  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #34 [SEM] ---
+Question: What is hypothesis H1b in the SEM paper?
+Expected keywords: ['higher SEO awareness', 'wider range', 'organic results']
+Retrieved docs (3): [' - H3a: Results that originate from an advertiseme...', '  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #35 [SEM] ---
+Question: What intrinsic information quality criteria are mentioned in the paper?
+Expected keywords: ['accuracy', 'objectivity', 'believability', 'reputation']
+Retrieved docs (3): [' - H4b: Results that perform SEO measures have a l...', ' - H3a: Results that originate from an advertiseme...', ' - H2a: The greater the domain knowledge, the fewe...']
+Top-3 Recall: 0.00
+Answer quality: 0.25
+
+--- Badcase #36 [SEM] ---
+Question: What representational information quality criteria are mentioned in the paper?
+Expected keywords: ['interpretability', 'ease of understanding', 'concise representation', 'consistent representation']
+Retrieved docs (3): [' - H2a: The greater the domain knowledge, the fewe...', ' - H4b: Results that perform SEO measures have a l...', ' Due to the variety of intentions underlying the u...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #37 [SEM] ---
+Question: What methods are planned to answer the SEM research questions?
+Expected keywords: ['online experiment', 'expert evaluation', 'causal relationships']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' However, such a model is important to gain an und...', ' Correct Answer → - [False] Bin Laden Incorrect An...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' We therefore focus our subsequent analysis on the...', ' Because the pattern for φ0 = 0.65 is bicontinuous...', ' Our analysis of this competition estab- lishes qu...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' We therefore focus our subsequent analysis on the...', ' The key outcome of quasi-stability for ecological...', '  SEM measures are driven by commercial, political...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #44 [MIPS] ---
+Question: What date is listed on the chemotactic MIPS paper?
+Expected keywords: ['January 31', '2023', 'Dated']
+Retrieved docs (3): [' Because the pattern for φ0 = 0.65 is bicontinuous...', '  SEM measures are driven by commercial, political...', ' We therefore focus our subsequent analysis on the...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' As a reference, the average speed of the patterns...', ' MIPS is well-studied for randomly-moving particle...', ' We again observe good agreement betweeb the predi...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #67 [SAM] ---
+Question: Why must SAM be ambiguity-aware?
+Expected keywords: ['ambiguous prompt', 'multiple objects', 'reasonable mask']
+Retrieved docs (3): [' To make SAM ambiguity-aware, we design it to pred...', ' The promptable segmentation task and the goal of ...', ' By separating SAM into an image encoder and a fas...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (3): [' If so, what analyses did you use and what were th...', ' To develop them, we address the following questio...', ' Images were ﬁltered for objectionable content pri...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #73 [SAM] ---
+Question: What happens in the semi-automatic stage of the SAM data engine?
+Expected keywords: ['automatically generate masks', 'likely object locations', 'annotators']
+Retrieved docs (3): [' Since SAM is operating in a zero- shot transfer s...', ' When training with data from the ﬁrst and sec- on...', ' Segment Anything Data Engine As segmentation mask...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #74 [SAM] ---
+Question: What happens in the fully automatic stage of the SAM data engine?
+Expected keywords: ['regular grid', 'foreground points', '100 masks per image']
+Retrieved docs (3): [' When training with data from the ﬁrst and sec- on...', ' Since SAM is operating in a zero- shot transfer s...', ' Segment Anything Data Engine As segmentation mask...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #81 [Governance] ---
+Question: What is the title of the governance paper?
+Expected keywords: ['Algorithmic Reflexive Governance', 'Socio-Techno-Ecological Systems']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...', ' Target Completion → The truth is that you want, a...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): ['  Downloaded on April 24,2026 at 14:34:14 UTC from...', ' Secondly, when the reg- ulatory system is itself ...', ' Resolving Tensions in Reflexive Governance In sum...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #83 [Governance] ---
+Question: What workshop is mentioned on the first page of the governance paper?
+Expected keywords: ['Montreal', 'Sept. 18-20, 2020', 'Society Sustainability in the Digital Age']
+Retrieved docs (3): ['  SEM measures are driven by commercial, political...', ' Approximately 75% of foreign companies that opera...', ' Target Completion → The truth is that you want, a...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' Artificial Intelligence, in the form of algo - ri...', ' A formal algorithmic specification, and its imple...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 80 | Config: hybrid_rerank
+Total Badcases: 16
+======================================================================
+
+--- Badcase #12 [GPT3] ---
+Question: What is the purpose of Figure 1.1 in the GPT-3 paper?
+Expected keywords: ['language model meta-learning', 'pre-training', 'in-context learning']
+Retrieved docs (3): [' Model generation selection methods, exclusion cri...', ' On DROP [DWD+19], a dataset testing discrete reas...', ' Out of 2,000 addition problems we found only 17 m...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #34 [SEM] ---
+Question: What is hypothesis H1b in the SEM paper?
+Expected keywords: ['higher SEO awareness', 'wider range', 'organic results']
+Retrieved docs (3): [' - H2a: The greater the domain knowledge, the fewe...', '  SEM measures are driven by commercial, political...', ' - H3a: Results that originate from an advertiseme...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #36 [SEM] ---
+Question: What representational information quality criteria are mentioned in the paper?
+Expected keywords: ['interpretability', 'ease of understanding', 'concise representation', 'consistent representation']
+Retrieved docs (3): [' - H2a: The greater the domain knowledge, the fewe...', ' - H4b: Results that perform SEO measures have a l...', ' - H3a: Results that originate from an advertiseme...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' Our analysis of this competition estab- lishes qu...', ' APPLICA TION IN LIVING AND SYNTHETIC SYSTEMS In t...', ' We therefore focus our subsequent analysis on the...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' We therefore focus our subsequent analysis on the...', '  Furthermore, because the proportionality between...', ' As detailed in Sec. II in [SI], the dispersion re...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #44 [MIPS] ---
+Question: What date is listed on the chemotactic MIPS paper?
+Expected keywords: ['January 31', '2023', 'Dated']
+Retrieved docs (3): ['  Furthermore, because the proportionality between...', ' As detailed in Sec. II in [SI], the dispersion re...', ' Because the pattern for φ0 = 0.65 is bicontinuous...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' We again observe good agreement betweeb the predi...', ' MIPS is well-studied for randomly-moving particle...', ' Synthetic forms of active matter that can perform...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #67 [SAM] ---
+Question: Why must SAM be ambiguity-aware?
+Expected keywords: ['ambiguous prompt', 'multiple objects', 'reasonable mask']
+Retrieved docs (3): [' To make SAM ambiguity-aware, we design it to pred...', ' By separating SAM into an image encoder and a fas...', ' In fact, SAM only underperforms ViTDet-H on small...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (3): [' Caveats and recommendations SAM has impressive ze...', ' SAM’s mean ratings fall between 7 and 9, which co...', ' For the human study, we use the subset listed in ...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #74 [SAM] ---
+Question: What happens in the fully automatic stage of the SAM data engine?
+Expected keywords: ['regular grid', 'foreground points', '100 masks per image']
+Retrieved docs (3): [' While a typical approach for foundation models is...', ' + automatic automatic Training data stages 70mIoU...', ' Since SAM is operating in a zero- shot transfer s...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #75 [SAM] ---
+Question: What kinds of images does SA-1B use according to the paper?
+Expected keywords: ['licensed', 'privacy-preserving', 'diverse']
+Retrieved docs (3): [' We infer the country images were photographed in ...', ' SA-1B has a substan- tially higher percentage of ...', ' In Fig. 5 we plot the spatial distribution of obj...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #81 [Governance] ---
+Question: What is the title of the governance paper?
+Expected keywords: ['Algorithmic Reflexive Governance', 'Socio-Techno-Ecological Systems']
+Retrieved docs (3): [' Stevens with the title ‘Shadows on the Way’.  G D...', ' Resolving Tensions in Reflexive Governance In sum...', ' In a sub-ideal world, information is abstract- ed...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): [' Algorithmic Reflexive Governance The idea behind ...', '  Downloaded on April 24,2026 at 14:34:14 UTC from...', ' Resolving Tensions in Reflexive Governance In sum...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #83 [Governance] ---
+Question: What workshop is mentioned on the first page of the governance paper?
+Expected keywords: ['Montreal', 'Sept. 18-20, 2020', 'Society Sustainability in the Digital Age']
+Retrieved docs (3): [' Resolving Tensions in Reflexive Governance In sum...', ' American Anthropolo- rank and role.  Restorative ...', ' Secondly, when the reg- ulatory system is itself ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #95 [Governance] ---
+Question: What are the three components of the extended Zone of Dignity?
+Expected keywords: ['coordinate plane', 'metrics', 'meta-rules']
+Retrieved docs (3): [' The Zone of Dignity In a system of systems, the r...', ' However, dignitarian considerations (such as non-...', ' The “poles” of this continuum are marked by exces...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' Artificial Intelligence, in the form of algo - ri...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' A formal algorithmic specification, and its imple...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 200 | Config: vector_only
+Total Badcases: 25
+======================================================================
+
+--- Badcase #4 [GPT3] ---
+Question: Does GPT-3 use gradient updates or fine-tuning during few-shot evaluation?
+Expected keywords: ['without gradient updates', 'no fine-tuning', 'text interaction']
+Retrieved docs (3): [' Broadly, on NLP tasks GPT-3 achieves promising re...', ' This is approaching the performance of a ﬁne-tune...', ' In this work we do not ﬁne-tune GPT-3 because our...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #10 [GPT3] ---
+Question: Which tasks are mentioned as requiring on-the-fly reasoning or domain adaptation?
+Expected keywords: ['unscrambling words', 'novel word', '3-digit arithmetic']
+Retrieved docs (3): [' Another sub-ﬁeld with similar goals is semi-super...', ' It then uses these abilities at inference time to...', ' In2017 IEEE/RSJ international conference on intel...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #11 [GPT3] ---
+Question: What does the paper say about larger models and in-context information?
+Expected keywords: ['larger models', 'in-context information', 'efficient use']
+Retrieved docs (3): [' Thanks to Jakub Pachocki and Szymon Sidor for sug...', ' Participants were asked to select whether the art...', ' 2.1 Model and Architectures We use the same model...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #30 [SEM] ---
+Question: How is knowledge gain defined in the SEM paper?
+Expected keywords: ['difference', 'knowledge before', 'knowledge after', 'search task']
+Retrieved docs (3): [' How search engine marketing influences user knowl...', ' Selecting search results for online experiment : ...', ' Conducting PSM or SEO measures is driven by the m...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #34 [SEM] ---
+Question: What is hypothesis H1b in the SEM paper?
+Expected keywords: ['higher SEO awareness', 'wider range', 'organic results']
+Retrieved docs (1): [' Interesting evaluations include how knowledge gai...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' As detailed in Sec. II in [SI], the dispersion re...', ' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...', ' Hence, we deﬁne a new chemotactic P´ eclet number...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' As detailed in Sec. II in [SI], the dispersion re...', ' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...', ' Hence, we deﬁne a new chemotactic P´ eclet number...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #44 [MIPS] ---
+Question: What date is listed on the chemotactic MIPS paper?
+Expected keywords: ['January 31', '2023', 'Dated']
+Retrieved docs (3): [' As detailed in Sec. II in [SI], the dispersion re...', ' Hence, we deﬁne a new chemotactic P´ eclet number...', ' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #45 [MIPS] ---
+Question: What does the paper say collective chemotaxis can do to MIPS?
+Expected keywords: ['competes', 'arresting', 'suppressing', 'dynamic instabilities']
+Retrieved docs (3): [' Hence, we deﬁne a new chemotactic P´ eclet number...', ' Here, we address this gap in knowledge by develop...', ' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #47 [MIPS] ---
+Question: What kinds of active matter systems are mentioned as examples in the MIPS paper?
+Expected keywords: ['enzymes', 'motile microorganisms', 'mammalian cells', 'robots']
+Retrieved docs (3): [' Conversely, when chemoattractant is limited, we e...', ' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...', ' As shown in Movie S3, ABPs phase separate into ﬁn...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #51 [MIPS] ---
+Question: Why is MIPS surprising compared with passive equilibrium phase separation?
+Expected keywords: ['without attractive interactions', 'dense and dilute phases', 'out-of-equilibrium']
+Retrieved docs (3): [' As shown in Movie S3, ABPs phase separate into ﬁn...', ' Thus, to examine how chemotaxis inﬂuences MIPS, w...', ' In this case, Boundary 2 is below the horizontal ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...', ' Conversely, when chemoattractant is limited, we e...', ' We again observe good agreement betweeb the predi...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #60 [MIPS] ---
+Question: What other forms of taxis does the theoretical framework suggest could be studied?
+Expected keywords: ['chemorepulsion', 'durotaxis', 'electrotaxis', 'phototaxis']
+Retrieved docs (0): []
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #67 [SAM] ---
+Question: Why must SAM be ambiguity-aware?
+Expected keywords: ['ambiguous prompt', 'multiple objects', 'reasonable mask']
+Retrieved docs (3): [' SAM signiﬁcantly outperforms prior interactive se...', ' In Table 4 we see unsurprisingly that using the d...', ' SAM’s mean ratings fall between 7 and 9, which co...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (1): [' SAM’s mean ratings fall between 7 and 9, which co...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #72 [SAM] ---
+Question: What happens in the assisted-manual stage of the SAM data engine?
+Expected keywords: ['SAM assists annotators', 'annotating masks', 'interactive segmentation']
+Retrieved docs (3): [' SAM’s mean ratings fall between 7 and 9, which co...', ' Since SAM is operating in a zero- shot transfer s...', ' Are there any conditions or deﬁnitions that, if c...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #74 [SAM] ---
+Question: What happens in the fully automatic stage of the SAM data engine?
+Expected keywords: ['regular grid', 'foreground points', '100 masks per image']
+Retrieved docs (3): [' Since SAM is operating in a zero- shot transfer s...', ' Are there any conditions or deﬁnitions that, if c...', ' SAM’s mean ratings fall between 7 and 9, which co...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #75 [SAM] ---
+Question: What kinds of images does SA-1B use according to the paper?
+Expected keywords: ['licensed', 'privacy-preserving', 'diverse']
+Retrieved docs (3): [' We focus on the geo- graphic and income distribut...', ' – Each image will include either a blue dot or a ...', ' To aid reproducibility of research using SA-1B, t...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #77 [SAM] ---
+Question: Across which perceived attributes does the SAM paper evaluate segmentation performance?
+Expected keywords: ['gender presentation', 'age group', 'skin tone']
+Retrieved docs (3): [' SAM’s mean ratings fall between 7 and 9, which co...', ' SAM signiﬁcantly outperforms prior interactive se...', ' • mIoU: We used the mean intersection-over-union ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #80 [SAM] ---
+Question: Under what license is SAM released according to the paper?
+Expected keywords: ['Apache 2.0', 'permissive open license', 'release']
+Retrieved docs (1): [' SAM’s mean ratings fall between 7 and 9, which co...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): [' Therefore, it is a criti - cal quality of a syste...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' Firstly, there is the claim that, with certain as...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #83 [Governance] ---
+Question: What workshop is mentioned on the first page of the governance paper?
+Expected keywords: ['Montreal', 'Sept. 18-20, 2020', 'Society Sustainability in the Digital Age']
+Retrieved docs (3): [' Four Dimensions of Refl  exivity In the context o...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' We have argued that algorithmic reflexive governa...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #85 [Governance] ---
+Question: What is the core aim of the governance paper?
+Expected keywords: ['self-governing', 'socio-technical systems', 'ecological impact', 'algorithms']
+Retrieved docs (3): [' Firstly, there is the claim that, with certain as...', ' Linking back to relevant expertise aggregation, o...', ' It has been used, or example, in dispute resolu- ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #97 [Governance] ---
+Question: What does the paper say about polycentric systems?
+Expected keywords: ['multiple autonomous centers', 'decision-making', 'peer-peer']
+Retrieved docs (1): ['” His concepts of equilibrium and stability of a s...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' There is a need to ensure our framework does not ...', ' Four Dimensions of Refl  exivity In the context o...', ' In principle, SmartMeters should be the sensors t...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 200 | Config: bm25_only
+Total Badcases: 14
+======================================================================
+
+--- Badcase #7 [GPT3] ---
+Question: Why do the authors compare GPT-3 few-shot learning with human learning?
+Expected keywords: ['few examples', 'simple instructions', 'humans']
+Retrieved docs (3): [' In addition to all the above, we also train a ser...', ' Note that this setting differs slightly from the ...', ' Speciﬁcally GPT-3 has difﬁculty with questions of...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #9 [GPT3] ---
+Question: What types of NLP tasks does GPT-3 achieve strong performance on?
+Expected keywords: ['translation', 'question-answering', 'cloze']
+Retrieved docs (3): [' In this work we continue to focus on pure autoreg...', ' Speciﬁcally GPT-3 has difﬁculty with questions of...', ' On COPA and ReCoRD GPT-3 achieves near-SOTA perfo...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #36 [SEM] ---
+Question: What representational information quality criteria are mentioned in the paper?
+Expected keywords: ['interpretability', 'ease of understanding', 'concise representation', 'consistent representation']
+Retrieved docs (3): ['  Users with domain knowledge are expected to sele...', ' Conducting PSM or SEO measures is driven by the m...', ' How search engine marketing influences user knowl...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #37 [SEM] ---
+Question: What methods are planned to answer the SEM research questions?
+Expected keywords: ['online experiment', 'expert evaluation', 'causal relationships']
+Retrieved docs (3): [' However, such a model is important to gain an und...', ' How search engine marketing influences user knowl...', '  Users with domain knowledge are expected to sele...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' As detailed in Sec. II in [SI], the dispersion re...', ' By perturb- ing this steady state with small-ampl...', ' Here, we address this gap in knowledge by develop...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' By perturb- ing this steady state with small-ampl...', ' (2) The dataset we release is privacy protecting:...', ' Open systems with self-determined rules, whether ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #44 [MIPS] ---
+Question: What date is listed on the chemotactic MIPS paper?
+Expected keywords: ['January 31', '2023', 'Dated']
+Retrieved docs (3): [' By perturb- ing this steady state with small-ampl...', ' As detailed in Sec. II in [SI], the dispersion re...', ' If the dataset is a sample from a larger set, wha...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #45 [MIPS] ---
+Question: What does the paper say collective chemotaxis can do to MIPS?
+Expected keywords: ['competes', 'arresting', 'suppressing', 'dynamic instabilities']
+Retrieved docs (3): [' Here, we address this gap in knowledge by develop...', ' Even more surprisingly, despite this process bein...', ' The second image on the bottom row shows a zoomed...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #54 [MIPS] ---
+Question: What does the chemotactic coefficient chi0 describe?
+Expected keywords: ['ability', 'move up', 'chemoattractant gradient']
+Retrieved docs (3): [' The photos vary in subject matter; common themes ...', ' If the dataset is a sample from a larger set, wha...', ' Does the dataset identify any subpopulations ( e....']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' We again observe good agreement betweeb the predi...', ' Chemotactic motility-induced phase separation Hon...', ' Here, we address this gap in knowledge by develop...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (3): [' What, if any, risks did your task pose for annota...', ' The severity of these errors may be minor or majo...', ' • Rate the quality of the mask on a scale of 1-10...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): [' Firstly, there is the claim that, with certain as...', ' We have argued that algorithmic reflexive governa...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' In principle, SmartMeters should be the sensors t...', ' There is a need to ensure our framework does not ...', ' Each option is given a final score as a proportio...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #100 [Governance] ---
+Question: What advances does the governance paper say remain to be made?
+Expected keywords: ['integration', 'common computational framework', 'value-sensitive design']
+Retrieved docs (3): [' Firstly, there is the claim that, with certain as...', ' In 2016, the denomination was split over ordinati...', ' “Raw” data ( e.g., unprocessed text or images) or...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 200 | Config: hybrid
+Total Badcases: 10
+======================================================================
+
+--- Badcase #7 [GPT3] ---
+Question: Why do the authors compare GPT-3 few-shot learning with human learning?
+Expected keywords: ['few examples', 'simple instructions', 'humans']
+Retrieved docs (3): [' In addition to all the above, we also train a ser...', ' Note that this setting differs slightly from the ...', ' Speciﬁcally GPT-3 has difﬁculty with questions of...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #30 [SEM] ---
+Question: How is knowledge gain defined in the SEM paper?
+Expected keywords: ['difference', 'knowledge before', 'knowledge after', 'search task']
+Retrieved docs (3): [' How search engine marketing influences user knowl...', ' Conducting PSM or SEO measures is driven by the m...', ' However, such a model is important to gain an und...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' As detailed in Sec. II in [SI], the dispersion re...', ' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...', ' Here, we address this gap in knowledge by develop...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' As detailed in Sec. I in [SI], M0 = 0.5U 2 0τR is...', ' As detailed in Sec. II in [SI], the dispersion re...', ' By perturb- ing this steady state with small-ampl...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #45 [MIPS] ---
+Question: What does the paper say collective chemotaxis can do to MIPS?
+Expected keywords: ['competes', 'arresting', 'suppressing', 'dynamic instabilities']
+Retrieved docs (3): [' Here, we address this gap in knowledge by develop...', ' Even more surprisingly, despite this process bein...', ' The second image on the bottom row shows a zoomed...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #54 [MIPS] ---
+Question: What does the chemotactic coefficient chi0 describe?
+Expected keywords: ['ability', 'move up', 'chemoattractant gradient']
+Retrieved docs (3): [' The photos vary in subject matter; common themes ...', ' If the dataset is a sample from a larger set, wha...', ' Does the dataset identify any subpopulations ( e....']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' We again observe good agreement betweeb the predi...', ' Here, we address this gap in knowledge by develop...', ' Chemotactic motility-induced phase separation Hon...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #68 [SAM] ---
+Question: What are the three main parts of the SAM architecture?
+Expected keywords: ['image encoder', 'prompt encoder', 'mask decoder']
+Retrieved docs (3): [' What, if any, risks did your task pose for annota...', ' The severity of these errors may be minor or majo...', ' • Rate the quality of the mask on a scale of 1-10...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): [' Firstly, there is the claim that, with certain as...', ' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' We have argued that algorithmic reflexive governa...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' There is a need to ensure our framework does not ...', ' In principle, SmartMeters should be the sensors t...', ' Therefore, it is a criti - cal quality of a syste...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+======================================================================
+Chunk Size: 200 | Config: hybrid_rerank
+Total Badcases: 8
+======================================================================
+
+--- Badcase #8 [GPT3] ---
+Question: What limitation of task-specific fine-tuning motivates the GPT-3 paper?
+Expected keywords: ['task-specific datasets', 'thousands', 'fine-tuning']
+Retrieved docs (3): [' Thus our design decision comes at the cost of pot...', ' Promising future directions in this vein might in...', ' Broadly, on NLP tasks GPT-3 achieves promising re...']
+Top-3 Recall: 0.00
+Answer quality: 0.33
+
+--- Badcase #30 [SEM] ---
+Question: How is knowledge gain defined in the SEM paper?
+Expected keywords: ['difference', 'knowledge before', 'knowledge after', 'search task']
+Retrieved docs (3): [' How search engine marketing influences user knowl...', ' Interesting evaluations include how knowledge gai...', ' However, such a model is important to gain an und...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #42 [MIPS] ---
+Question: Who are the authors of the chemotactic MIPS paper?
+Expected keywords: ['Hongbo Zhao', 'Andrej Kosmrlj', 'Sujit S. Datta']
+Retrieved docs (3): [' As detailed in Sec. II in [SI], the dispersion re...', ' Here, we address this gap in knowledge by develop...', ' Conversely, when chemoattractant is limited, we e...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #43 [MIPS] ---
+Question: What institution are the authors of the chemotactic MIPS paper affiliated with?
+Expected keywords: ['Princeton University', 'Chemical and Biological Engineering', 'Mechanical and Aerospace Engineering']
+Retrieved docs (3): [' enzymes are active matter, Proceedings of the Nat...', ' As detailed in Sec. II in [SI], the dispersion re...', ' APPLICA TION IN LIVING AND SYNTHETIC SYSTEMS In t...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #59 [MIPS] ---
+Question: What experimental systems might explore the instabilities predicted by the chemotactic MIPS theory?
+Expected keywords: ['synthetic active matter', 'tunable velocities', 'chemical dynamics']
+Retrieved docs (3): [' We again observe good agreement betweeb the predi...', ' APPLICA TION IN LIVING AND SYNTHETIC SYSTEMS In t...', ' Conversely, when chemoattractant is limited, we e...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #67 [SAM] ---
+Question: Why must SAM be ambiguity-aware?
+Expected keywords: ['ambiguous prompt', 'multiple objects', 'reasonable mask']
+Retrieved docs (3): [' SAM signiﬁcantly outperforms prior interactive se...', ' In Table 4 we see unsurprisingly that using the d...', ' Surprisingly, we ﬁnd that a simple design satisﬁe...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #82 [Governance] ---
+Question: Who are the authors of the Algorithmic Reflexive Governance paper?
+Expected keywords: ['Jeremy Pitt', 'John Dryzek', 'Josiah Ober']
+Retrieved docs (3): [' IEEE TECHNOLOGY AND SOCIETY MAGAZINE      ∕   JUN...', ' We have argued that algorithmic reflexive governa...', '  Therefore, the deeper challenge for algorithmic ...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+--- Badcase #98 [Governance] ---
+Question: What four layers of human involvement are described for community energy systems?
+Expected keywords: ['autonomous', 'programmable', 'interactive', 'attentive']
+Retrieved docs (3): [' There is a need to ensure our framework does not ...', ' In principle, SmartMeters should be the sensors t...', ' Each option is given a final score as a proportio...']
+Top-3 Recall: 0.00
+Answer quality: 0.00
+
+
+======================================================================
+DPO-style Pairwise Comparison Results
+======================================================================
+
+hybrid_vs_bm25:
+  A Wins: 8 | B Wins: 3 | TIE: 189
+  Win Rate: 72.7%
+
+hybrid_rerank_vs_hybrid:
+  A Wins: 4 | B Wins: 10 | TIE: 186
+  Win Rate: 28.6%

@@ -1,0 +1,94 @@
+======================================================================
+Retrieval Ablation Badcase Analysis
+Generated: 2026-04-24 23:08:24
+======================================================================
+
+--- Badcase #5 [Biophysics] ---
+Question: What is the effect of directional bias on MIPS?
+Expected: ['competition', 'suppression']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #6 [Biophysics] ---
+Question: Describe the role of chemical gradients in chemotaxis.
+Expected: ['directional motion', 'particles generate themselves']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #7 [Biophysics] ---
+Question: What physics systems does the study apply to?
+Expected: ['cells', 'robots']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #8 [Biophysics] ---
+Question: What was the date of the revised version?
+Expected: ['January 31', '2023']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #10 [Biophysics] ---
+Question: Mention one reference related to active Brownian motion.
+Expected: ['Buttinoni', 'Volpe']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #11 [Governance] ---
+Question: What is Algorithmic Reflexive Governance?
+Expected: ['change self', 'feedback']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #12 [Governance] ---
+Question: Define Reflexivity in the context of socio-techno-ecological systems.
+Expected: ['signals from Earth systems', 'feedback']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #13 [Governance] ---
+Question: Who is the lead author of the governance paper?
+Expected: ['Jeremy Pitt']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #14 [Governance] ---
+Question: What are the three zations mentioned in the diagram?
+Expected: ['Technocratization', 'Democratization', 'Marketization']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #15 [Governance] ---
+Question: Explain Democracy by Design according to the references.
+Expected: ['Basic Democracy', 'self-organisation']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #17 [Governance] ---
+Question: What does the paper say about Radical Transparency?
+Expected: ['inclusive public deliberation', 'digital transparency']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #19 [Governance] ---
+Question: How does feedback from Earth systems affect governance?
+Expected: ['Holocene', 'Anthropocene', 'inclusive deliberation']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #20 [Governance] ---
+Question: Is technology considered a parasite or a symbiont in the text?
+Expected: ['Robbins', 'host', 'masquerading']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #21 [Epidemiology] ---
+Question: Where was the 16-year cohort study conducted?
+Expected: ['Czech Republic']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #22 [Epidemiology] ---
+Question: What is the relationship between cancer hospitalisation and depression?
+Expected: ['proxy for diagnosis', 'independent risk factor']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #23 [Epidemiology] ---
+Question: Who is the first author of the JAD 2020 paper?
+Expected: ['Wentian Lu']
+Top-3 Recall: 0.00, Quality: 1.00
+
+--- Badcase #26 [Epidemiology] ---
+Question: What keywords are associated with the article info?
+Expected: ['Cancer', 'Depression', 'Hospitalisation']
+Top-3 Recall: 0.00, Quality: 0.00
+
+--- Badcase #27 [Epidemiology] ---
+Question: Mention one database used to link the cohort data.
+Expected: ['national hospitalisation records']
+Top-3 Recall: 0.00, Quality: 0.00

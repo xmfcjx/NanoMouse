@@ -1,0 +1,22 @@
+{
+  "仅Vector检索": {
+    "avg_recall": 0.8167,
+    "avg_quality": 0.5542,
+    "avg_latency": 6.26
+  },
+  "Vector+BM25": {
+    "avg_recall": 0.8167,
+    "avg_quality": 0.5208,
+    "avg_latency": 6.72
+  },
+  "Vector+Rerank": {
+    "avg_recall": 0.8667,
+    "avg_quality": 0.5042,
+    "avg_latency": 6.63
+  },
+  "完整混合检索": {
+    "avg_recall": 0.9167,
+    "avg_quality": 0.5042,
+    "avg_latency": 6.41
+  }
+}

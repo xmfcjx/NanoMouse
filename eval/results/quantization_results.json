@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-25 17:04:39",
+  "results": [
+    {
+      "method": "FP16 (Original)",
+      "model_size_mb": 2955.394428253174,
+      "load_time_sec": 11.066296100616455,
+      "inference_time_sec": 9.88537859916687,
+      "memory_used_mb": 2960.82373046875,
+      "output_quality": "Baseline",
+      "error": null
+    },
+    {
+      "method": "INT8 (bitsandbytes)",
+      "model_size_mb": 1477.697214126587,
+      "load_time_sec": 31.099236726760864,
+      "inference_time_sec": 26.15373811721802,
+      "memory_used_mb": 1724.095703125,
+      "output_quality": "Better",
+      "error": null
+    },
+    {
+      "method": "INT4 (bitsandbytes NF4)",
+      "model_size_mb": 738.8486070632935,
+      "load_time_sec": 25.419288396835327,
+      "inference_time_sec": 7.835447978973389,
+      "memory_used_mb": 1189.90771484375,
+      "output_quality": "Good",
+      "error": null
+    },
+    {
+      "method": "FP4 (bitsandbytes)",
+      "model_size_mb": 738.8486070632935,
+      "load_time_sec": 23.632283926010132,
+      "inference_time_sec": 7.457731533050537,
+      "memory_used_mb": 1861.79248046875,
+      "output_quality": "Good",
+      "error": null
+    },
+    {
+      "method": "GGUF Q4_K_M",
+      "model_size_mb": 1065.5600891113281,
+      "load_time_sec": 10.23509669303894,
+      "inference_time_sec": 3.6989393711090086,
+      "memory_used_mb": 0,
+      "output_quality": "Good",
+      "error": null
+    }
+  ]
+}

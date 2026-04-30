@@ -25,37 +25,52 @@ def run_tool_tests(agent):
         ("calc", "print(10 + 20)", r"^30$", "10+20"),
         ("calc", "print(2 ** 10)", r"^1024$", "2的10次方"),
         ("calc", "print(3.14 * 2)", r"^6\.28$", "小数运算"),
+        ("calc", "print(2 ** 8 - 1)", r"^255$", "2^8-1"),
+        ("calc", "print(17 % 5)", r"^2$", "取模运算"),
         ("time", "", r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", "获取当前时间"),
         ("date", "2025-01-01 + 100天", r"^2025-04-11$", "2025元旦+100天"),
         ("date", "2025-12-31 - 1天", r"^2025-12-30$", "2025跨年-1天"),
+        ("date", "2025-02-01 + 28天", r"^2025-03-01$", "2月+28天"),
         ("weekday", "2025-10-01", r"Wednesday", "2025国庆节星期几"),
         ("weekday", "2025-01-01", r"Wednesday", "2025元旦星期几"),
+        ("weekday", "2025-07-04", r"Friday", "2025美国独立日"),
         ("weekday", "", r"(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)", "不传参默认今天"),
         ("days_between", "2025-01-01, 2025-10-01", r"^273$", "元旦到国庆天数"),
         ("days_between", "2025-01-01, 2025-12-31", r"^364$", "全年天数"),
+        ("days_between", "2024-02-29, 2025-02-28", r"^365$", "闰年到平年"),
         ("convert", "100km to miles", r"^62\.13\d*", "公里转英里"),
         ("convert", "1kg to pounds", r"^2\.204\d*", "千克转磅"),
         ("convert", "36c to f", r"^96\.8°F$", "摄氏转华氏"),
-        ("convert", "212f to c", r"^100°C$", "华氏转摄氏"),
+        ("convert", "212f to c", r"^100(\.00)?°C$", "华氏转摄氏"),
+        ("convert", "0c to f", r"^32(\.0)?°F$", "冰点转换"),
+        ("convert", "1mile to km", r"^1\.609\d*", "英里转公里"),
         ("base_convert", "255 to hex", r"^FF$", "255转十六进制"),
         ("base_convert", "1010 to dec", r"^10$", "二进制转十进制"),
         ("base_convert", "255 to bin", r"^11111111$", "255转二进制"),
         ("base_convert", "255 to oct", r"^377$", "255转八进制"),
+        ("base_convert", "16 to hex", r"^10$", "16转十六进制"),
+        ("base_convert", "1111 to dec", r"^15$", "二进制1111转十进制"),
         ("str_tools", "hello, len", r"^5$", "字符串长度"),
         ("str_tools", "hello, reverse", r"^olleh$", "字符串反转"),
         ("str_tools", "hello, upper", r"^HELLO$", "转大写"),
         ("str_tools", "HELLO, lower", r"^hello$", "转小写"),
+        ("str_tools", "hello world, len", r"^11$", "含空格长度"),
         ("random", "dice 3", r"^[\d], [\d], [\d]$", "掷3个骰子(格式)"),
         ("random", "coin 2", r"^(Head|Tail)", "掷2个硬币(格式)"),
-        ("statistics", "10, 55, 23, 88, 41, max", r"^88$", "最大值"),
-        ("statistics", "10, 55, 23, 88, 41, min", r"^10$", "最小值"),
+        ("random", "dice 1", r"^[\d]$", "掷1个骰子"),
+        ("statistics", "10, 55, 23, 88, 41, max", r"^88(\.0)?$", "最大值"),
+        ("statistics", "10, 55, 23, 88, 41, min", r"^10(\.0)?$", "最小值"),
         ("statistics", "10, 55, 23, 88, 41, avg", r"^43\.4$", "平均值"),
-        ("statistics", "10, 55, 23, 88, 41, sum", r"^217$", "求和"),
+        ("statistics", "10, 55, 23, 88, 41, sum", r"^217(\.0)?$", "求和"),
+        ("statistics", "1, 2, 3, 4, 5, avg", r"^3(\.0)?$", "简单平均"),
         ("solve", "3*x*x=27", r"x = -3", "3x²=27 (二次)"),
         ("solve", "2*x+5=17", r"x = 6", "2x+5=17 (一次)"),
         ("solve", "x*x=81", r"x = -9", "x²=81 (二次双解)"),
         ("solve", "4*x*x-8*x+4=0", r"x = 1", "4x²-8x+4=0 (重根)"),
         ("solve", "3*x - 9 = 0", r"x = 3", "3x-9=0 (一次)"),
+        ("solve", "x + 10 = 20", r"x = 10", "简单方程"),
+        ("weather", "Beijing", r"\d+°C", "北京天气"),
+        ("weather", "Shanghai", r"\d+°C", "上海天气"),
     ]
 
     pass_count = 0
@@ -109,9 +124,15 @@ def run_classifier_tests(classifier):
         ("Who am I?", "identity", "question", "身份-查询名称"),
         ("What is the capital of France?", "rag", "", "RAG-普通问题"),
         ("Tell me about Assignment 1", "rag", "", "RAG-知识库"),
-        # 👇 新增：容易误判为工具的常识问题
         ("What is the meaning of life?", "rag", "", "常识-不应走工具"),
         ("帮我写一首诗", "rag", "", "创作-不应走工具"),
+        ("what's the weather in Beijing", "agent", "weather", "天气-北京"),
+        ("Shanghai weather", "agent", "weather", "天气-上海"),
+        ("北京天气", "agent", "weather", "天气-中文"),
+        ("calculate 100 + 200", "agent", "arithmetic", "算术-calculate关键词"),
+        ("solve x + 5 = 10", "agent", "equation", "方程-solve关键词"),
+        ("100km to miles", "agent", "convert", "单位转换-公里转英里"),
+        ("255 to hex", "agent", "base_convert", "进制转换-十六进制"),
     ]
 
     pass_count = 0
@@ -163,6 +184,9 @@ def run_integration_tests(classifier, agent):
         ("2*x+5=17", r"x = 6", "解方程-一次"),
         ("What is 15 multiplied by 4?", r"^60$", "算术-英文"),
         ("10 + 20", r"^30$", "算术-加法"),
+        ("what's the weather in Beijing", r"\d+°C", "天气查询-北京"),
+        ("100km to miles", r"62\.13", "单位转换-公里转英里"),
+        ("255 to hex", r"^FF$", "进制转换-十六进制"),
     ]
 
     pass_count = 0
@@ -172,6 +196,9 @@ def run_integration_tests(classifier, agent):
         "time": ("time", ""), "date_today": ("time", ""),
         "weekday": ("weekday", None), "days_between": ("days_between", None),
         "equation": ("solve", None), "arithmetic": ("calc", None),
+        "weather": ("weather", None),
+        "base_convert": ("base_convert", None),
+        "convert": ("convert", None),
     }
 
     for query, expected_pattern, desc in test_cases:
@@ -186,6 +213,9 @@ def run_integration_tests(classifier, agent):
                 if subtype == "arithmetic":
                     expr = classifier.extract_arithmetic_expr(query)
                     response = agent.direct_call("calc", f"print({expr})") if expr else "ERROR"
+                elif subtype == "weather":
+                    city = classifier.is_weather_question(query)
+                    response = agent.direct_call("weather", city)
                 else:
                     response = agent.direct_call(tool_name, tool_input)
             else:

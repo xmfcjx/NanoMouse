@@ -1,0 +1,120 @@
+{
+  "total_cases": 500,
+  "direct": {
+    "avg_latency": 0.033,
+    "min_latency": 0.0,
+    "max_latency": 1.761,
+    "accuracy": 0.974,
+    "correct": 487
+  },
+  "react": {
+    "avg_latency": 27.254,
+    "min_latency": 10.663,
+    "max_latency": 65.996,
+    "accuracy": 0.56,
+    "correct": 280
+  },
+  "speedup": 827.8,
+  "tool_stats": {
+    "direct": {
+      "calc": {
+        "correct": 98,
+        "total": 98
+      },
+      "weather": {
+        "correct": 13,
+        "total": 13
+      },
+      "solve": {
+        "correct": 52,
+        "total": 52
+      },
+      "base_convert": {
+        "correct": 52,
+        "total": 65
+      },
+      "convert": {
+        "correct": 78,
+        "total": 78
+      },
+      "time": {
+        "correct": 13,
+        "total": 13
+      },
+      "weekday": {
+        "correct": 26,
+        "total": 26
+      },
+      "days_between": {
+        "correct": 13,
+        "total": 13
+      },
+      "date": {
+        "correct": 13,
+        "total": 13
+      },
+      "str_tools": {
+        "correct": 52,
+        "total": 52
+      },
+      "statistics": {
+        "correct": 52,
+        "total": 52
+      },
+      "random": {
+        "correct": 25,
+        "total": 25
+      }
+    },
+    "react": {
+      "calc": {
+        "correct": 1,
+        "total": 98
+      },
+      "weather": {
+        "correct": 4,
+        "total": 13
+      },
+      "solve": {
+        "correct": 52,
+        "total": 52
+      },
+      "base_convert": {
+        "correct": 21,
+        "total": 65
+      },
+      "convert": {
+        "correct": 78,
+        "total": 78
+      },
+      "time": {
+        "correct": 7,
+        "total": 13
+      },
+      "weekday": {
+        "correct": 13,
+        "total": 26
+      },
+      "days_between": {
+        "correct": 13,
+        "total": 13
+      },
+      "date": {
+        "correct": 13,
+        "total": 13
+      },
+      "str_tools": {
+        "correct": 24,
+        "total": 52
+      },
+      "statistics": {
+        "correct": 29,
+        "total": 52
+      },
+      "random": {
+        "correct": 25,
+        "total": 25
+      }
+    }
+  }
+}

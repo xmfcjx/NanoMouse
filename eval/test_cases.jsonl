@@ -1,0 +1,200 @@
+{"question": "Calculate 5 * 13", "expected_tool": "calc", "expected_answer": "65", "type": "single_tool", "id": 1}
+{"question": "Who wrote The Odyssey?", "expected_tool": null, "expected_answer": "Homer", "type": "no_tool", "id": 2}
+{"question": "How is the weather in Moscow?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 3}
+{"question": "Solve 7x = 56, then convert x to binary", "expected_tool": "solve", "expected_answer": null, "type": "multi_turn", "id": 4}
+{"question": "33 inches to cm", "expected_tool": "convert", "expected_answer": "83.82", "type": "single_tool", "id": 5}
+{"question": "Convert 128 to hex, then multiply by 2", "expected_tool": "base_convert", "expected_answer": null, "type": "multi_turn", "id": 6}
+{"question": "Convert 32°F to Celsius, then add 100", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 7}
+{"question": "What is 243 cm in inches?", "expected_tool": "convert", "expected_answer": "95.67", "type": "single_tool", "id": 8}
+{"question": "What is 20 divided by 2?", "expected_tool": "calc", "expected_answer": "10", "type": "single_tool", "id": 9}
+{"question": "Determine x from 4x = 40", "expected_tool": "solve", "expected_answer": "x = 10", "type": "solve", "id": 10}
+{"question": "What is the cube of 15?", "expected_tool": "calc", "expected_answer": "3375", "type": "single_tool", "id": 11}
+{"question": "Solve the equation 3x = -12", "expected_tool": "solve", "expected_answer": "x = -4", "type": "solve", "id": 12}
+{"question": "Give me the current time", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 13}
+{"question": "Solve the equation 6x + 12 = 42", "expected_tool": "solve", "expected_answer": "x = 5", "type": "solve", "id": 14}
+{"question": "Solve for x: 3(x) + 3 = -6", "expected_tool": "solve", "expected_answer": "x = -3", "type": "solve", "id": 15}
+{"question": "Convert 249 miles to km", "expected_tool": "convert", "expected_answer": "400.73", "type": "single_tool", "id": 16}
+{"question": "Compute 29 * 99", "expected_tool": "calc", "expected_answer": "2871", "type": "single_tool", "id": 17}
+{"question": "How is the weather in Amsterdam?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 18}
+{"question": "What is 79 plus 83?", "expected_tool": "calc", "expected_answer": "162", "type": "single_tool", "id": 19}
+{"question": "Divide 87 by 36", "expected_tool": "calc", "expected_answer": "2.42", "type": "single_tool", "id": 20}
+{"question": "Tell me a joke", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 21}
+{"question": "What is the hex representation of 218?", "expected_tool": "base_convert", "expected_answer": "DA", "type": "base_convert", "id": 22}
+{"question": "What day is it today?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 23}
+{"question": "What's your favorite color?", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 24}
+{"question": "What is the tallest mountain?", "expected_tool": null, "expected_answer": "Everest", "type": "no_tool", "id": 25}
+{"question": "Check weather for Mumbai", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 26}
+{"question": "What is the square root of 169?", "expected_tool": "calc", "expected_answer": "13", "type": "single_tool", "id": 27}
+{"question": "Weather in Moscow", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 28}
+{"question": "Convert 32 to binary, then convert back to decimal", "expected_tool": "base_convert", "expected_answer": null, "type": "multi_turn", "id": 29}
+{"question": "What is 35 mod 14?", "expected_tool": "calc", "expected_answer": "7", "type": "single_tool", "id": 30}
+{"question": "Convert 30 celsius to fahrenheit, then subtract 32", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 31}
+{"question": "Add 49 and 47", "expected_tool": "calc", "expected_answer": "96", "type": "single_tool", "id": 32}
+{"question": "What is today's date?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 33}
+{"question": "Calculate 2 ** 6, then convert to binary", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 34}
+{"question": "Convert 212°F to Celsius, then divide by 5", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 35}
+{"question": "Who wrote Romeo and Juliet?", "expected_tool": null, "expected_answer": "Shakespeare", "type": "no_tool", "id": 36}
+{"question": "Solve 2x + 3 = 13, then calculate x squared", "expected_tool": "solve", "expected_answer": null, "type": "multi_turn", "id": 37}
+{"question": "611 meters to feet", "expected_tool": "convert", "expected_answer": "2004.59", "type": "single_tool", "id": 38}
+{"question": "What is the chemical symbol for iron?", "expected_tool": null, "expected_answer": "Fe", "type": "no_tool", "id": 39}
+{"question": "What is the capital of Australia?", "expected_tool": null, "expected_answer": "Canberra", "type": "no_tool", "id": 40}
+{"question": "What should I eat for dinner?", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 41}
+{"question": "Convert 33 to binary", "expected_tool": "base_convert", "expected_answer": "100001", "type": "base_convert", "id": 42}
+{"question": "Convert 11101100 from binary to decimal", "expected_tool": "base_convert", "expected_answer": "236", "type": "base_convert", "id": 43}
+{"question": "What is the absolute value of -1?", "expected_tool": "calc", "expected_answer": "1", "type": "single_tool", "id": 44}
+{"question": "What is 50 minus 14?", "expected_tool": "calc", "expected_answer": "36", "type": "single_tool", "id": 45}
+{"question": "136 kg to pounds", "expected_tool": "convert", "expected_answer": "299.83", "type": "single_tool", "id": 46}
+{"question": "What is 4 factorial?", "expected_tool": "calc", "expected_answer": "24", "type": "single_tool", "id": 47}
+{"question": "25 miles to km", "expected_tool": "convert", "expected_answer": "40.23", "type": "single_tool", "id": 48}
+{"question": "What is 185 mod 12?", "expected_tool": "calc", "expected_answer": "5", "type": "single_tool", "id": 49}
+{"question": "Convert 30 celsius to fahrenheit, then subtract 32", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 50}
+{"question": "Convert 72°F to Celsius, then multiply by 2", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 51}
+{"question": "Add 91 and 56", "expected_tool": "calc", "expected_answer": "147", "type": "single_tool", "id": 52}
+{"question": "Convert 64 to binary, then count the number of 1s", "expected_tool": "base_convert", "expected_answer": null, "type": "multi_turn", "id": 53}
+{"question": "Convert 51 cm into inches", "expected_tool": "convert", "expected_answer": "20.08", "type": "single_tool", "id": 54}
+{"question": "How is the weather in Vancouver?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 55}
+{"question": "Calculate 8 * 8, then convert to octal", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 56}
+{"question": "What is x if 4x = 80?", "expected_tool": "solve", "expected_answer": "x = 20", "type": "solve", "id": 57}
+{"question": "Find x in 19x = -19", "expected_tool": "solve", "expected_answer": "x = -1", "type": "solve", "id": 58}
+{"question": "What is the capital of India?", "expected_tool": null, "expected_answer": "New Delhi", "type": "no_tool", "id": 59}
+{"question": "What is 338 kg in pounds?", "expected_tool": "convert", "expected_answer": "745.16", "type": "single_tool", "id": 60}
+{"question": "What time is it right now?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 61}
+{"question": "How many chromosomes do humans have?", "expected_tool": null, "expected_answer": "46", "type": "no_tool", "id": 62}
+{"question": "How many sides does a hexagon have?", "expected_tool": null, "expected_answer": "6", "type": "no_tool", "id": 63}
+{"question": "Calculate (39 + 19) * 2", "expected_tool": "calc", "expected_answer": "116", "type": "single_tool", "id": 64}
+{"question": "Convert 30 celsius to fahrenheit, then subtract 32", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 65}
+{"question": "What is 697 grams in ounces?", "expected_tool": "convert", "expected_answer": "24.59", "type": "single_tool", "id": 66}
+{"question": "Who invented the telephone?", "expected_tool": null, "expected_answer": "Bell", "type": "no_tool", "id": 67}
+{"question": "What is 88 times 96?", "expected_tool": "calc", "expected_answer": "8448", "type": "single_tool", "id": 68}
+{"question": "Solve 3x - 5 = 16, then divide x by 7", "expected_tool": "solve", "expected_answer": null, "type": "multi_turn", "id": 69}
+{"question": "What is today's date?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 70}
+{"question": "What is 14 squared?", "expected_tool": "calc", "expected_answer": "196", "type": "single_tool", "id": 71}
+{"question": "Calculate 3 ** 4, then convert to binary", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 72}
+{"question": "Greetings!", "expected_tool": null, "expected_answer": null, "type": "no_tool", "id": 73}
+{"question": "Get weather for New York, then solve 3x = 21", "expected_tool": "weather", "expected_answer": null, "type": "multi_turn", "id": 74}
+{"question": "Rewrite 73 in hexadecimal", "expected_tool": "base_convert", "expected_answer": "49", "type": "base_convert", "id": 75}
+{"question": "Give me the weather forecast for Beijing", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 76}
+{"question": "What is 340 fahrenheit in celsius?", "expected_tool": "convert", "expected_answer": "171.1", "type": "single_tool", "id": 77}
+{"question": "How to cook pasta?", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 78}
+{"question": "What is 261 kg in pounds?", "expected_tool": "convert", "expected_answer": "575.41", "type": "single_tool", "id": 79}
+{"question": "Convert 2 ounces into grams", "expected_tool": "convert", "expected_answer": "56.7", "type": "single_tool", "id": 80}
+{"question": "Calculate 3 ** 3", "expected_tool": "calc", "expected_answer": "27", "type": "single_tool", "id": 81}
+{"question": "Calculate 73 - 27", "expected_tool": "calc", "expected_answer": "46", "type": "single_tool", "id": 82}
+{"question": "Calculate 9 ** 4", "expected_tool": "calc", "expected_answer": "6561", "type": "single_tool", "id": 83}
+{"question": "Calculate 5 ** 3, then convert to hex", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 84}
+{"question": "What is 56 divided by 14?", "expected_tool": "calc", "expected_answer": "4", "type": "single_tool", "id": 85}
+{"question": "Who developed the theory of relativity?", "expected_tool": null, "expected_answer": "Einstein", "type": "no_tool", "id": 86}
+{"question": "What is the weather in Lisbon?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 87}
+{"question": "Calculate 10^2", "expected_tool": "calc", "expected_answer": "100", "type": "single_tool", "id": 88}
+{"question": "Date and time please", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 89}
+{"question": "Solve for x: 8(x) + 1 = 49", "expected_tool": "solve", "expected_answer": "x = 6", "type": "solve", "id": 90}
+{"question": "Tell me the weather in Lisbon", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 91}
+{"question": "Weather in Mumbai", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 92}
+{"question": "How many ounces is 657 grams?", "expected_tool": "convert", "expected_answer": "23.18", "type": "single_tool", "id": 93}
+{"question": "Convert 19F from hexadecimal to decimal", "expected_tool": "base_convert", "expected_answer": "415", "type": "base_convert", "id": 94}
+{"question": "Express 63 in hexadecimal", "expected_tool": "base_convert", "expected_answer": "3F", "type": "base_convert", "id": 95}
+{"question": "How is the weather in Vancouver?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 96}
+{"question": "Tell me a bedtime story", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 97}
+{"question": "How many continents are there?", "expected_tool": null, "expected_answer": "7", "type": "no_tool", "id": 98}
+{"question": "What is the square root of 16?", "expected_tool": "calc", "expected_answer": "4", "type": "single_tool", "id": 99}
+{"question": "Tell me the current date and time", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 100}
+{"question": "How many km is 151 miles?", "expected_tool": "convert", "expected_answer": "243.01", "type": "single_tool", "id": 101}
+{"question": "What time is it right now?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 102}
+{"question": "What is the boiling point of water?", "expected_tool": null, "expected_answer": "100", "type": "no_tool", "id": 103}
+{"question": "Convert 322 kg to pounds", "expected_tool": "convert", "expected_answer": "709.89", "type": "single_tool", "id": 104}
+{"question": "What is x if 6x - 13 = -55?", "expected_tool": "solve", "expected_answer": "x = -7", "type": "solve", "id": 105}
+{"question": "What is 77 minus 56?", "expected_tool": "calc", "expected_answer": "21", "type": "single_tool", "id": 106}
+{"question": "What is the binary representation of 506?", "expected_tool": "base_convert", "expected_answer": "111111010", "type": "base_convert", "id": 107}
+{"question": "What is 14 inches in cm?", "expected_tool": "convert", "expected_answer": "35.56", "type": "single_tool", "id": 108}
+{"question": "Convert 50 kg to pounds, then add 10", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 109}
+{"question": "Change 218 to hex", "expected_tool": "base_convert", "expected_answer": "DA", "type": "base_convert", "id": 110}
+{"question": "Write a cover letter", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 111}
+{"question": "Calculate 51 % 16", "expected_tool": "calc", "expected_answer": "3", "type": "single_tool", "id": 112}
+{"question": "What's the current weather in Tokyo?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 113}
+{"question": "How do I learn to play guitar?", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 114}
+{"question": "Good evening!", "expected_tool": null, "expected_answer": null, "type": "no_tool", "id": 115}
+{"question": "Date and time please", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 116}
+{"question": "Give me the current time", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 117}
+{"question": "22 inches to cm", "expected_tool": "convert", "expected_answer": "55.88", "type": "single_tool", "id": 118}
+{"question": "Convert 93 gallons to liters", "expected_tool": "convert", "expected_answer": "352.04", "type": "single_tool", "id": 119}
+{"question": "Calculate 5 ** 3, then convert to hex", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 120}
+{"question": "Weather in Berlin, then convert 100 pounds to kg", "expected_tool": "weather", "expected_answer": null, "type": "multi_turn", "id": 121}
+{"question": "Calculate 2 ** 6, then convert to binary", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 122}
+{"question": "Convert 138 liters to gallons", "expected_tool": "convert", "expected_answer": "36.46", "type": "single_tool", "id": 123}
+{"question": "What is today's date?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 124}
+{"question": "What is the largest planet in our solar system?", "expected_tool": null, "expected_answer": "Jupiter", "type": "no_tool", "id": 125}
+{"question": "Solve 5x = 25, then convert x to hexadecimal", "expected_tool": "solve", "expected_answer": null, "type": "multi_turn", "id": 126}
+{"question": "hex 1E0 to decimal", "expected_tool": "base_convert", "expected_answer": "480", "type": "base_convert", "id": 127}
+{"question": "Give me relationship advice", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 128}
+{"question": "163 to hexadecimal", "expected_tool": "base_convert", "expected_answer": "A3", "type": "base_convert", "id": 129}
+{"question": "Give me the current time", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 130}
+{"question": "Divide 31 by 66", "expected_tool": "calc", "expected_answer": "0.47", "type": "single_tool", "id": 131}
+{"question": "What is today's date?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 132}
+{"question": "binary 111110010 to decimal", "expected_tool": "base_convert", "expected_answer": "498", "type": "base_convert", "id": 133}
+{"question": "233 kg to pounds", "expected_tool": "convert", "expected_answer": "513.68", "type": "single_tool", "id": 134}
+{"question": "What is the cube of 11?", "expected_tool": "calc", "expected_answer": "1331", "type": "single_tool", "id": 135}
+{"question": "What is x if 5x - 10 = 65?", "expected_tool": "solve", "expected_answer": "x = 15", "type": "solve", "id": 136}
+{"question": "Convert 216 into binary format", "expected_tool": "base_convert", "expected_answer": "11011000", "type": "base_convert", "id": 137}
+{"question": "What's the current weather in Shanghai?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 138}
+{"question": "129 to hexadecimal", "expected_tool": "base_convert", "expected_answer": "81", "type": "base_convert", "id": 139}
+{"question": "binary 11011 to decimal", "expected_tool": "base_convert", "expected_answer": "27", "type": "base_convert", "id": 140}
+{"question": "What is 2 to the power of 5?", "expected_tool": "calc", "expected_answer": "32", "type": "single_tool", "id": 141}
+{"question": "How many cm is 98 inches?", "expected_tool": "convert", "expected_answer": "248.92", "type": "single_tool", "id": 142}
+{"question": "Convert 920 meters into feet", "expected_tool": "convert", "expected_answer": "3018.37", "type": "single_tool", "id": 143}
+{"question": "Translate 'goodbye' to Spanish", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 144}
+{"question": "What is 100 inches in cm?", "expected_tool": "convert", "expected_answer": "254.0", "type": "single_tool", "id": 145}
+{"question": "Convert 34 inches into cm", "expected_tool": "convert", "expected_answer": "86.36", "type": "single_tool", "id": 146}
+{"question": "906 meters to feet", "expected_tool": "convert", "expected_answer": "2972.44", "type": "single_tool", "id": 147}
+{"question": "Calculate 86 * 31", "expected_tool": "calc", "expected_answer": "2666", "type": "single_tool", "id": 148}
+{"question": "Determine x from 3x + 2 = 44", "expected_tool": "solve", "expected_answer": "x = 14", "type": "solve", "id": 149}
+{"question": "Solve 3x = 48, then convert x to binary", "expected_tool": "solve", "expected_answer": null, "type": "multi_turn", "id": 150}
+{"question": "What's the current time?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 151}
+{"question": "How many cm is 78 inches?", "expected_tool": "convert", "expected_answer": "198.12", "type": "single_tool", "id": 152}
+{"question": "Convert 307 km into miles", "expected_tool": "convert", "expected_answer": "190.76", "type": "single_tool", "id": 153}
+{"question": "What's the current weather in Seoul?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 154}
+{"question": "Multiply 92 by 10", "expected_tool": "calc", "expected_answer": "920", "type": "single_tool", "id": 155}
+{"question": "hexadecimal 51 to decimal", "expected_tool": "base_convert", "expected_answer": "81", "type": "base_convert", "id": 156}
+{"question": "Calculate 10 * 10, then convert to binary", "expected_tool": "calc", "expected_answer": null, "type": "multi_turn", "id": 157}
+{"question": "How many meters is 80 feet?", "expected_tool": "convert", "expected_answer": "24.38", "type": "single_tool", "id": 158}
+{"question": "Solve for x: 4x = 28", "expected_tool": "solve", "expected_answer": "x = 7", "type": "solve", "id": 159}
+{"question": "Solve 3(x) + 4 = 28", "expected_tool": "solve", "expected_answer": "x = 8", "type": "solve", "id": 160}
+{"question": "How is the weather in Bangkok?", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 161}
+{"question": "Convert 200 pounds to kg, then add 5", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 162}
+{"question": "Convert 546 grams to ounces", "expected_tool": "convert", "expected_answer": "19.26", "type": "single_tool", "id": 163}
+{"question": "Change 31 to octal", "expected_tool": "base_convert", "expected_answer": "37", "type": "base_convert", "id": 164}
+{"question": "Convert the decimal number 137 to octal", "expected_tool": "base_convert", "expected_answer": "211", "type": "base_convert", "id": 165}
+{"question": "Convert 371 meters into feet", "expected_tool": "convert", "expected_answer": "1217.19", "type": "single_tool", "id": 166}
+{"question": "Convert 1F from hex to decimal", "expected_tool": "base_convert", "expected_answer": "31", "type": "base_convert", "id": 167}
+{"question": "Hello!", "expected_tool": null, "expected_answer": null, "type": "no_tool", "id": 168}
+{"question": "Express 464 in hexadecimal", "expected_tool": "base_convert", "expected_answer": "1D0", "type": "base_convert", "id": 169}
+{"question": "What value of x satisfies 4(x) + 5 = 9?", "expected_tool": "solve", "expected_answer": "x = 1", "type": "solve", "id": 170}
+{"question": "Who wrote The Odyssey?", "expected_tool": null, "expected_answer": "Homer", "type": "no_tool", "id": 171}
+{"question": "Express 298 in binary", "expected_tool": "base_convert", "expected_answer": "100101010", "type": "base_convert", "id": 172}
+{"question": "Weather in Beijing", "expected_tool": "weather", "expected_answer": null, "type": "single_tool", "id": 173}
+{"question": "What is the chemical symbol for iron?", "expected_tool": null, "expected_answer": "Fe", "type": "no_tool", "id": 174}
+{"question": "Greetings!", "expected_tool": null, "expected_answer": null, "type": "no_tool", "id": 175}
+{"question": "What is x if 13x = 104?", "expected_tool": "solve", "expected_answer": "x = 8", "type": "solve", "id": 176}
+{"question": "Get weather for New York, then solve 3x = 21", "expected_tool": "weather", "expected_answer": null, "type": "multi_turn", "id": 177}
+{"question": "What is the weather in Tokyo? Then convert 25 celsius to fahrenheit", "expected_tool": "weather", "expected_answer": null, "type": "multi_turn", "id": 178}
+{"question": "What is 8 squared?", "expected_tool": "calc", "expected_answer": "64", "type": "single_tool", "id": 179}
+{"question": "Convert 45 from octal to decimal", "expected_tool": "base_convert", "expected_answer": "37", "type": "base_convert", "id": 180}
+{"question": "Calculate 27 / 9", "expected_tool": "calc", "expected_answer": "3", "type": "single_tool", "id": 181}
+{"question": "How many kg is 30 pounds?", "expected_tool": "convert", "expected_answer": "13.61", "type": "single_tool", "id": 182}
+{"question": "Interesting!", "expected_tool": null, "expected_answer": null, "type": "no_tool", "id": 183}
+{"question": "Calculate 5^2", "expected_tool": "calc", "expected_answer": "25", "type": "single_tool", "id": 184}
+{"question": "octal 452 to decimal", "expected_tool": "base_convert", "expected_answer": "298", "type": "base_convert", "id": 185}
+{"question": "What is x if 2(x) + 1 = 11?", "expected_tool": "solve", "expected_answer": "x = 5", "type": "solve", "id": 186}
+{"question": "What's the best vacation spot?", "expected_tool": null, "expected_answer": null, "type": "reject", "id": 187}
+{"question": "17 cm to inches", "expected_tool": "convert", "expected_answer": "6.69", "type": "single_tool", "id": 188}
+{"question": "How many grams is 82 ounces?", "expected_tool": "convert", "expected_answer": "2324.66", "type": "single_tool", "id": 189}
+{"question": "Express 210 in octal", "expected_tool": "base_convert", "expected_answer": "322", "type": "base_convert", "id": 190}
+{"question": "Add 70 and 95", "expected_tool": "calc", "expected_answer": "165", "type": "single_tool", "id": 191}
+{"question": "Calculate 67 % 6", "expected_tool": "calc", "expected_answer": "1", "type": "single_tool", "id": 192}
+{"question": "Convert 50°F to Celsius, then subtract 5", "expected_tool": "convert", "expected_answer": null, "type": "multi_turn", "id": 193}
+{"question": "What is the weather in Tokyo? Then convert 25 celsius to fahrenheit", "expected_tool": "weather", "expected_answer": null, "type": "multi_turn", "id": 194}
+{"question": "What is 382 pounds in kg?", "expected_tool": "convert", "expected_answer": "173.27", "type": "single_tool", "id": 195}
+{"question": "Convert 399 fahrenheit to celsius", "expected_tool": "convert", "expected_answer": "203.9", "type": "single_tool", "id": 196}
+{"question": "Convert the decimal number 129 to binary", "expected_tool": "base_convert", "expected_answer": "10000001", "type": "base_convert", "id": 197}
+{"question": "Solve the equation 4(x) + 2 = 38", "expected_tool": "solve", "expected_answer": "x = 9", "type": "solve", "id": 198}
+{"question": "What's the date?", "expected_tool": "time", "expected_answer": null, "type": "single_tool", "id": 199}
+{"question": "Solve 6x + 1 = 37, then subtract 2 from x", "expected_tool": "solve", "expected_answer": null, "type": "multi_turn", "id": 200}

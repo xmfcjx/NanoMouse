@@ -1,0 +1,22 @@
+{
+  "total_cases": 200,
+  "valid_dpo_pairs": 66,
+  "preference_distribution": {
+    "finetuned_wins": 52,
+    "base_wins": 14,
+    "tied_good": 75,
+    "tied_bad": 59
+  },
+  "win_rates": {
+    "finetuned": 26.0,
+    "base": 7.0,
+    "tied": 67.0
+  },
+  "per_dimension_ft_wins": {
+    "tool_correct": 14,
+    "answer_correct": 29,
+    "format_correct": 16
+  },
+  "avg_score_diff": 0.0779,
+  "timestamp": "2026-04-30T19:34:35.623543"
+}

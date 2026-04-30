@@ -1,13 +1,16 @@
 """ 
-NanoChat-Lab 主程序 (v4.3 - 直通车版)
-所有 agent 类型通过 direct_call 直接调用工具，不再经过 LLM ReAct 循环
+NanoChat-Lab 主程序 (v4.5 - LLM 驱动记忆系统)
+使用 LLM 理解语义，而非硬编码规则
+支持量化模式: fp16, int8, int4, fp4, gguf
 """ 
 import os 
 import re 
+import argparse
 from pypdf import PdfReader 
 
 from core.llm import LLM 
 from core.memory import Memory 
+from core.memory_store import MemoryStore
 from core.vector_store import VectorStore 
 from core.bm25_store import BM25Store 
 from core.embedding import Embedding 
@@ -19,7 +22,22 @@ from core.ReActAgent import ReActAgent
 # ========================= 
 # 1. 全局初始化 
 # ========================= 
-print("NanoChat-Lab Initializing... Please wait.") 
+def parse_args():
+    parser = argparse.ArgumentParser(description="NanoChat-Lab")
+    parser.add_argument("--quantization", "-q", type=str, default="int4",
+                        choices=["fp16", "int8", "int4", "fp4", "gguf"],
+                        help="量化模式: fp16, int8, int4, fp4, gguf (默认: int4)")
+    parser.add_argument("--model", "-m", type=str, default="models/Qwen2.5-1.5B",
+                        help="模型路径 (默认: models/Qwen2.5-1.5B)")
+    parser.add_argument("--lora", type=str, default="models/lora_adapter",
+                        help="LoRA adapter 路径 (默认: models/lora_adapter, 设为 none 禁用)")
+    return parser.parse_args()
+
+args = parse_args()
+
+print("NanoChat-Lab Initializing... Please wait.")
+print(f"[Config] Quantization: {args.quantization.upper()}, Model: {args.model}, LoRA: {args.lora}")
+
 embedding = Embedding() 
 vector_store = VectorStore(embedding) 
 bm25_store = BM25Store() 
@@ -27,9 +45,11 @@ reranker = Rerank()
 
 retriever = Retriever(vector_store, bm25_store=bm25_store, reranker=reranker) 
 
-llm = LLM() 
+adapter_path = args.lora if args.lora.lower() != "none" else None
+llm = LLM(model_path=args.model, quantization=args.quantization, adapter_path=adapter_path) 
 agent = ReActAgent(llm, max_steps=3) 
 classifier = InputClassifier() 
+memory_store = MemoryStore(llm=llm) 
 
 # ========================= 
 # 2. 知识库加载（同时喂给 VectorStore 和 BM25Store） 
@@ -132,23 +152,32 @@ def postprocess_response(text: str) -> str:
 # ========================= 
 # 4. 核心接口 
 # ========================= 
-def get_response(query, history=None): 
+def get_response(query, history=None, memory=None): 
     """ 
     :param query: 用户当前输入 
     :param history: 由外部传入的历史对话列表 
+    :param memory: Memory 对象，用于对话历史
     :return: (response, predict_type, subtype) 
     """ 
     if history is None: history = [] 
+    if memory is None:
+        from core.memory import Memory
+        memory = Memory()
+    
     temp_history = history + [{"role": "user", "content": query}] 
 
-    # 分类器判断 
+    # ================= 1. LLM 驱动的记忆处理 =================
+    response, pred_type, subtype = memory_store.process(query)
+    if response:
+        return response, pred_type, subtype
+
+    # ================= 2. 分类器判断 =================
     result = classifier.classify(query, temp_history) 
     predict_type = result["type"] 
     subtype = result.get("subtype", "") 
     response = "" 
 
     if result["handled"]: 
-        # Identity 等直接处理的类型 
         response = result["value"] 
         
     elif predict_type == "agent": 
@@ -156,6 +185,10 @@ def get_response(query, history=None):
         
         if subtype == "time" or subtype == "date_today":
             response = agent.direct_call("time")
+            
+        elif subtype == "weather":
+            city = classifier.is_weather_question(query)
+            response = agent.direct_call("weather", city)
             
         elif subtype == "weekday":
             response = agent.direct_call("weekday", query)
@@ -174,6 +207,16 @@ def get_response(query, history=None):
             else:
                 response = "无法解析算术表达式"
                 
+        elif subtype == "base_convert":
+            # 进制转换：直接调用 base_convert 工具
+            response = agent.direct_call("base_convert", query)
+                
+        elif subtype == "multi_tool":
+            # 多工具问题：走 ReAct 循环，让模型自己决定调用什么工具
+            agent_response = agent.run(query)
+            final_match = re.search(r"Final Answer:\s*(.*)", agent_response, re.IGNORECASE | re.DOTALL)
+            response = final_match.group(1).strip() if final_match else agent_response.strip()
+                
         else:
             # 未知 agent 子类型，走 ReAct 循环兜底
             agent_response = agent.run(query)
@@ -186,7 +229,7 @@ def get_response(query, history=None):
         actual_question = rag_data["question"] 
         inline_context = rag_data["context"] 
 
-        docs = retriever.retrieve(actual_question, k=3, threshold=0.3) 
+        docs = retriever.retrieve(actual_question) 
         retrieved_context = "\n".join(docs) 
 
         if inline_context: 
@@ -207,7 +250,7 @@ def get_response(query, history=None):
 # 5. 交互模式 
 # ========================= 
 def main(): 
-    print("NanoChat (v4.3 - Direct Call Agent)") 
+    print("NanoChat (v4.5 - LLM-Driven Memory)") 
     print("Commands: /clear /exit\n") 
     memory = Memory(max_history=8) 
 
@@ -217,11 +260,12 @@ def main():
         if query.lower() in ["/exit", "exit", "quit"]: break 
         if query.lower() in ["/clear", "clear"]: 
             memory.clear() 
+            memory_store.clear()
             print("\nAssistant: Memory cleared.") 
             continue 
 
         history = memory.get_messages() 
-        response, pred_type, subtype = get_response(query, history) 
+        response, pred_type, subtype = get_response(query, history, memory) 
 
         if subtype: 
             print(f"\n[Classify: {pred_type} > {subtype}]") 

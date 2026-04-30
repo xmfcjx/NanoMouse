@@ -1,18 +1,43 @@
+from config.config import get_config
+
 class Retriever:
-    def __init__(self, vector_store, bm25_store=None, reranker=None):
+    def __init__(self, vector_store, bm25_store=None, reranker=None,
+                 rrf_k=None, rrf_alpha=None):
         self.vector_store = vector_store
         self.bm25_store = bm25_store
         self.reranker = reranker
+        self.rrf_k = rrf_k if rrf_k is not None else get_config("retriever.rrf_k", 60)
+        self.rrf_alpha = rrf_alpha if rrf_alpha is not None else get_config("retriever.rrf_alpha", 0.4)
 
-    def _merge_and_dedup(self, list_a, list_b):
-        #合并两个列表并去重
-        seen = set()
-        merged = []
-        for doc in list_a + list_b:
-            if doc not in seen:
-                seen.add(doc)
-                merged.append(doc)
-        return merged
+    def _merge_and_dedup(self, list_a, list_b, use_rrf=True):
+        """
+        合并两个列表并去重
+        use_rrf: 是否使用 Reciprocal Rank Fusion
+        """
+        k = self.rrf_k
+        alpha = self.rrf_alpha
+        if not use_rrf:
+            seen = set()
+            merged = []
+            for doc in list_a + list_b:
+                if doc not in seen:
+                    seen.add(doc)
+                    merged.append(doc)
+            return merged
+        
+        scores = {}
+        for rank, doc in enumerate(list_a, 1):
+            if doc not in scores:
+                scores[doc] = 0
+            scores[doc] += alpha * 1 / (k + rank)
+        
+        for rank, doc in enumerate(list_b, 1):
+            if doc not in scores:
+                scores[doc] = 0
+            scores[doc] += (1 - alpha) * 1 / (k + rank)
+        
+        sorted_docs = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+        return [doc for doc, score in sorted_docs]
 
 
     def retrieve(self, query, k=3, threshold=0.3, debug=False):

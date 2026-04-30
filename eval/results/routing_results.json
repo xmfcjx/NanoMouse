@@ -1,0 +1,17 @@
+{
+  "total": 30,
+  "type_accuracy": 0.9667,
+  "subtype_accuracy": 0.9333,
+  "errors": [
+    {
+      "question": "What day is today?",
+      "expected": "agent/date_today",
+      "predicted": "agent/weekday"
+    },
+    {
+      "question": "50 fahrenheit to celsius",
+      "expected": "agent/convert",
+      "predicted": "rag/"
+    }
+  ]
+}

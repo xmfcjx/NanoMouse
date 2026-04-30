@@ -4,20 +4,37 @@ model:
   max_tokens: 512
   temperature: 0.7
   top_p: 0.9
+  quantization: int4
+  max_new_tokens: 128
+  gguf_ctx: 512
+  repetition_penalty: 1.05
 
 embedding:
   model: sentence-transformers/all-MiniLM-L6-v2
 
 rag:
   enabled: false
-  chunk_size: 500
+  chunk_size: 80
   chunk_overlap: 50
   top_k: 3
+  threshold: 0.3
+
+retriever:
+  rrf_k: 60
+  rrf_alpha: 0.4
+  bm25_top_k: 6
+
+agent:
+  enabled: false
+  max_steps: 3
+  max_new_tokens: 128
+
+ablation:
+  chunk_sizes: [80, 200]
+  quick_test_n: 10
 
 paths:
   data: "./data"
   models: "./models"
   logs: "./logs"
-
-agent:
-  enabled: false
+  results: "./eval/results"

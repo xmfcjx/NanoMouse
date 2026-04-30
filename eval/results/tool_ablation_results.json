@@ -1,0 +1,325 @@
+{
+  "experiment": "tool_ablation",
+  "timestamp": "2026-04-28 13:15:02",
+  "quick_test": false,
+  "results": {
+    "3_tools": {
+      "num_tools": 3,
+      "tools": [
+        "calc",
+        "time",
+        "weather"
+      ],
+      "total_cases": 123,
+      "direct": {
+        "correct": 122,
+        "accuracy": 0.9919,
+        "avg_latency": 0.123
+      },
+      "react": {
+        "correct": 36,
+        "accuracy": 0.2927,
+        "avg_latency": 30.839
+      },
+      "per_tool": {
+        "calc": {
+          "direct": 97,
+          "react": 23,
+          "total": 97
+        },
+        "weather": {
+          "direct": 12,
+          "react": 0,
+          "total": 13
+        },
+        "time": {
+          "direct": 13,
+          "react": 13,
+          "total": 13
+        }
+      }
+    },
+    "5_tools": {
+      "num_tools": 5,
+      "tools": [
+        "calc",
+        "time",
+        "weather",
+        "solve",
+        "convert"
+      ],
+      "total_cases": 253,
+      "direct": {
+        "correct": 253,
+        "accuracy": 1.0,
+        "avg_latency": 0.061
+      },
+      "react": {
+        "correct": 150,
+        "accuracy": 0.5929,
+        "avg_latency": 28.527
+      },
+      "per_tool": {
+        "calc": {
+          "direct": 97,
+          "react": 23,
+          "total": 97
+        },
+        "weather": {
+          "direct": 13,
+          "react": 0,
+          "total": 13
+        },
+        "solve": {
+          "direct": 52,
+          "react": 43,
+          "total": 52
+        },
+        "convert": {
+          "direct": 78,
+          "react": 78,
+          "total": 78
+        },
+        "time": {
+          "direct": 13,
+          "react": 6,
+          "total": 13
+        }
+      }
+    },
+    "8_tools": {
+      "num_tools": 8,
+      "tools": [
+        "calc",
+        "time",
+        "weather",
+        "solve",
+        "convert",
+        "base_convert",
+        "weekday",
+        "date"
+      ],
+      "total_cases": 357,
+      "direct": {
+        "correct": 344,
+        "accuracy": 0.9636,
+        "avg_latency": 0.044
+      },
+      "react": {
+        "correct": 158,
+        "accuracy": 0.4426,
+        "avg_latency": 29.666
+      },
+      "per_tool": {
+        "calc": {
+          "direct": 97,
+          "react": 23,
+          "total": 97
+        },
+        "weather": {
+          "direct": 13,
+          "react": 0,
+          "total": 13
+        },
+        "solve": {
+          "direct": 52,
+          "react": 43,
+          "total": 52
+        },
+        "base_convert": {
+          "direct": 52,
+          "react": 0,
+          "total": 65
+        },
+        "convert": {
+          "direct": 78,
+          "react": 78,
+          "total": 78
+        },
+        "time": {
+          "direct": 13,
+          "react": 1,
+          "total": 13
+        },
+        "weekday": {
+          "direct": 26,
+          "react": 0,
+          "total": 26
+        },
+        "date": {
+          "direct": 13,
+          "react": 13,
+          "total": 13
+        }
+      }
+    },
+    "10_tools": {
+      "num_tools": 10,
+      "tools": [
+        "calc",
+        "time",
+        "weather",
+        "solve",
+        "convert",
+        "base_convert",
+        "weekday",
+        "date",
+        "str_tools",
+        "statistics"
+      ],
+      "total_cases": 461,
+      "direct": {
+        "correct": 448,
+        "accuracy": 0.9718,
+        "avg_latency": 0.039
+      },
+      "react": {
+        "correct": 197,
+        "accuracy": 0.4273,
+        "avg_latency": 29.286
+      },
+      "per_tool": {
+        "calc": {
+          "direct": 97,
+          "react": 23,
+          "total": 97
+        },
+        "weather": {
+          "direct": 13,
+          "react": 1,
+          "total": 13
+        },
+        "solve": {
+          "direct": 52,
+          "react": 43,
+          "total": 52
+        },
+        "base_convert": {
+          "direct": 52,
+          "react": 0,
+          "total": 65
+        },
+        "convert": {
+          "direct": 78,
+          "react": 78,
+          "total": 78
+        },
+        "time": {
+          "direct": 13,
+          "react": 12,
+          "total": 13
+        },
+        "weekday": {
+          "direct": 26,
+          "react": 11,
+          "total": 26
+        },
+        "date": {
+          "direct": 13,
+          "react": 13,
+          "total": 13
+        },
+        "str_tools": {
+          "direct": 52,
+          "react": 0,
+          "total": 52
+        },
+        "statistics": {
+          "direct": 52,
+          "react": 16,
+          "total": 52
+        }
+      }
+    },
+    "12_tools": {
+      "num_tools": 12,
+      "tools": [
+        "calc",
+        "time",
+        "weather",
+        "solve",
+        "convert",
+        "base_convert",
+        "weekday",
+        "date",
+        "str_tools",
+        "statistics",
+        "random",
+        "days_between"
+      ],
+      "total_cases": 500,
+      "direct": {
+        "correct": 487,
+        "accuracy": 0.974,
+        "avg_latency": 0.036
+      },
+      "react": {
+        "correct": 228,
+        "accuracy": 0.456,
+        "avg_latency": 73.195
+      },
+      "per_tool": {
+        "calc": {
+          "direct": 97,
+          "react": 23,
+          "total": 97
+        },
+        "weather": {
+          "direct": 13,
+          "react": 0,
+          "total": 13
+        },
+        "solve": {
+          "direct": 52,
+          "react": 43,
+          "total": 52
+        },
+        "base_convert": {
+          "direct": 52,
+          "react": 0,
+          "total": 65
+        },
+        "convert": {
+          "direct": 78,
+          "react": 78,
+          "total": 78
+        },
+        "time": {
+          "direct": 13,
+          "react": 3,
+          "total": 13
+        },
+        "weekday": {
+          "direct": 26,
+          "react": 13,
+          "total": 26
+        },
+        "days_between": {
+          "direct": 13,
+          "react": 13,
+          "total": 13
+        },
+        "date": {
+          "direct": 13,
+          "react": 13,
+          "total": 13
+        },
+        "str_tools": {
+          "direct": 52,
+          "react": 0,
+          "total": 52
+        },
+        "statistics": {
+          "direct": 52,
+          "react": 16,
+          "total": 52
+        },
+        "random": {
+          "direct": 26,
+          "react": 26,
+          "total": 26
+        }
+      }
+    }
+  }
+}

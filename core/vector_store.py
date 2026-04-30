@@ -1,19 +1,23 @@
 import numpy as np
 import yaml
 import re
+from config.config import get_config
+from core.text_cleaner import clean_pdf_text_336_style, restore_protected_periods
 
 class VectorStore:
-    def __init__(self, embedding):
-        #self.embed_class = Embedding()
-        #这样会每次都加载embed模型！
-        self.embedding =embedding
+    def __init__(self, embedding, chunk_size=None):
+        self.embedding = embedding
         self.texts = []
         self.vectors = []
-        self.add=self.add_text
+        self.chunk_size = chunk_size if chunk_size is not None else get_config("rag.chunk_size", 80)
+        self.default_threshold = get_config("rag.threshold", 0.3)
+        self.add = self.add_text
 
-    def add_text(self, text, chunk_size=80):
+    def add_text(self, text, chunk_size=None):
         if not text or not text.strip():
             return
+        if chunk_size is None:
+            chunk_size = self.chunk_size
         chunks = self.split_text(text, chunk_size)
         # batch embedding
         vectors = self.embedding.embed(chunks)
@@ -39,26 +43,25 @@ class VectorStore:
         self.vectors.append(emb)
 
     def split_text(self,text,chunk_size=80):
+        text = clean_pdf_text_336_style(text)
         sentences = re.findall(r'[^.!?]+[.!?]?', text)
+        sentences = [restore_protected_periods(s) for s in sentences]
         chunk=[]
         term=""
         term_length=0
         for i in sentences:
             i_length=len(i.split())
-            #print("#####chunk####",i_length,term_length)
-            #print(term_length+i_length,chunk_size)
-            if i_length>=chunk_size:    #单个句子就超长！
+            if i_length>=chunk_size:
                 if term:
                     chunk.append(term)
                 chunk.append(i)
                 term=""
                 term_length=0
-            elif term_length+i_length>=chunk_size:  #加起来溢出
+            elif term_length+i_length>=chunk_size:
                 term = term + " " + i
                 chunk.append(term)
                 term=i
                 term_length=i_length
-                #overlap
             else:
                 if term is None:
                     term=i
@@ -69,7 +72,11 @@ class VectorStore:
             chunk.append(term)
         return chunk
 
-    def search(self, query, k=3, threshold=0.3,debug=False):
+    def search(self, query, k=None, threshold=None, debug=False):
+        if k is None:
+            k = get_config("rag.top_k", 3)
+        if threshold is None:
+            threshold = self.default_threshold
         if len(self.vectors) == 0:
             return []
         # query embedding

@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-04-26T13:07:59.312916",
+  "model": "models/Qwen2.5-1.5B",
+  "test_cases": {
+    "memory": 36,
+    "memory_continuous": 10,
+    "rag": 20,
+    "agent": 20,
+    "routing": 60,
+    "total": 146
+  },
+  "results": [
+    {
+      "method": "FP16",
+      "model_size_mb": 2955.394428253174,
+      "peak_vram_mb": 3048.51416015625,
+      "load_time_sec": 13.61761999130249,
+      "ppl": 13.440666830068883,
+      "tokens_per_sec": 9.974961189891896,
+      "avg_latency_ms": 10025.101661682129,
+      "memory_accuracy": 0.5277777777777778,
+      "memory_action_accuracy": 0.4722222222222222,
+      "memory_key_accuracy": 0.5833333333333334,
+      "memory_continuous_accuracy": 0.6,
+      "rag_accuracy": 1.0,
+      "rag_keyword_recall": 0.8949999999999999,
+      "agent_accuracy": 0.85,
+      "routing_type_accuracy": 0.8,
+      "routing_subtype_accuracy": 0.7666666666666667,
+      "total_score": 0.6846028830794691,
+      "error": null
+    },
+    {
+      "method": "INT4",
+      "model_size_mb": 738.8486070632935,
+      "peak_vram_mb": 1201.310546875,
+      "load_time_sec": 35.79695677757263,
+      "ppl": 34.03958532374661,
+      "tokens_per_sec": 11.891369861366996,
+      "avg_latency_ms": 8409.460067749023,
+      "memory_accuracy": 0.4861111111111111,
+      "memory_action_accuracy": 0.4722222222222222,
+      "memory_key_accuracy": 0.5,
+      "memory_continuous_accuracy": 0.5,
+      "rag_accuracy": 0.9,
+      "rag_keyword_recall": 0.8875,
+      "agent_accuracy": 0.8,
+      "routing_type_accuracy": 0.8,
+      "routing_subtype_accuracy": 0.7666666666666667,
+      "total_score": 0.5848053536128611,
+      "error": null
+    }
+  ]
+}

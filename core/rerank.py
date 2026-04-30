@@ -12,16 +12,16 @@ class Rerank:
         # 3. 加载模型
         self.model = CrossEncoder(self.model_path)
 
-    def rerank(self,query,top_k,top_n=3):
-        if len(top_k) < top_n:
-            raise ValueError("top_n cannot be larger than number of documents")
-        pairs = [(query, doc) for doc in top_k]
+    def rerank(self, query, docs, top_n=3):
+        if not docs:
+            return []
+        if len(docs) <= top_n:
+            return docs
+        pairs = [(query, doc) for doc in docs]
         scores = self.model.predict(pairs)
-        result=[(score,text) for score,text in zip(scores,top_k)]
+        result = [(score, text) for score, text in zip(scores, docs)]
         result.sort(reverse=True)
-        return  [doc for _,doc in result[:top_n]]
-        #result=[(text,score) for text,score in zip(top_k,scores)]
-        #result=sorted(result,key=lambda x:x[1] ,reverse=True)
+        return [doc for _, doc in result[:top_n]]
     
     
 

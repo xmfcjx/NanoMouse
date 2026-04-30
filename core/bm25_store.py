@@ -1,34 +1,37 @@
 import re
 import jieba
 from rank_bm25 import BM25Okapi
+from config.config import get_config
+from core.text_cleaner import clean_pdf_text_336_style, restore_protected_periods
 
 class BM25Store:
-    def __init__(self, chunk_size=80):
-        self.chunk_size = chunk_size
-        self.corpus = []      # 分词后的 chunk 列表
-        self.raw_docs = []    # 原始 chunk 列表（返回用）
-        self.bm25 = None      # BM25 实例
+    def __init__(self, chunk_size=None):
+        self.chunk_size = chunk_size if chunk_size is not None else get_config("rag.chunk_size", 80)
+        self.default_top_k = get_config("retriever.bm25_top_k", 6)
+        self.corpus = []
+        self.raw_docs = []
+        self.bm25 = None
 
-    # 和之前vector里面一样
     def split_text(self, text, chunk_size=80):
+        text = clean_pdf_text_336_style(text)
         sentences = re.findall(r'[^.!?]+[.!?]?', text)
+        sentences = [restore_protected_periods(s) for s in sentences]
         chunk = []
         term = ""
         term_length = 0
         for i in sentences:
             i_length = len(i.split())
-            if i_length >= chunk_size:    # 单个句子就超长！
+            if i_length >= chunk_size:
                 if term:
                     chunk.append(term)
                 chunk.append(i)
                 term = ""
                 term_length = 0
-            elif term_length + i_length >= chunk_size:  # 加起来溢出
+            elif term_length + i_length >= chunk_size:
                 term = term + " " + i
                 chunk.append(term)
                 term = i
                 term_length = i_length
-                # overlap 逻辑
             else:
                 if term is None:
                     term = i
@@ -62,8 +65,9 @@ class BM25Store:
         self.bm25 = BM25Okapi(self.corpus)
         print(f"[BM25] Index built with {len(self.corpus)} chunks.")
 
-    def search(self, query: str, top_k: int = 5) -> list[str]:
-        """搜索与 query 最相关的文档"""
+    def search(self, query: str, top_k: int = None) -> list[str]:
+        if top_k is None:
+            top_k = self.default_top_k
         if self.bm25 is None:
             print("[BM25] Error: Index not built. Call build() first.")
             return []
