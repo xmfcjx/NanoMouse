@@ -1,202 +1,249 @@
+# NanoChat-Lab
+
+> 当大模型遇上 4GB 显存：如何在消费级硬件上跑出生产级效果？
+
+NanoChat-Lab 探索的核心问题是：**在设备受限环境下（4GB VRAM / GTX 1650），如何让 1.5B 参数的小模型具备可靠的工具调用、知识检索和多轮对话能力？**
+
+本项目不依赖 LangChain 等重型框架，全部模块从零实现，通过"量化压缩 + LoRA 微调 + Prompt 工程 + 路由优化"四层策略，在极低资源下达到甚至超越原生大 Prompt 方案的效果。
+
+## 为什么做这个项目
+
+大模型落地面临一个现实矛盾：云端 API 有成本和隐私问题，而本地部署受限于硬件。大量边缘场景（嵌入式设备、老旧工作站、无网络环境）只有 4-6GB 显存可用。NanoChat-Lab 验证了一条可行路径：
+
+- 1.5B 模型 + int4 量化 → 显存占用 < 2GB
+- LoRA 微调 + 短 Prompt → 比原生模型 + 长 Prompt 更准更快
+- 分类器路由 + 直通调用 → 绕过小模型 ReAct 循环的不稳定性
+- 混合检索 + Rerank → 在小上下文窗口下最大化信息密度
+
+## 系统架构
+
+```
+用户输入
+    ↓
+┌─────────────────────────────────────────┐
+│         MemoryStore（记忆层）             │
+│       正则优先 + LLM 兜底提取信息         │
+└─────────────────────────────────────────┘
+    ↓ 未命中
+┌─────────────────────────────────────────┐
+│       InputClassifier（路由层）           │
+│    identity / agent / rag / reject       │
+└─────────────────────────────────────────┘
+    ↓
+┌───────────┬────────────────┬────────────┐
+│ identity  │     agent      │    rag     │
+│ 直接回复   │  direct_call   │  混合检索   │
+│           │  / ReAct 循环   │  + Rerank  │
+└───────────┴────────────────┴────────────┘
+    ↓
+┌─────────────────────────────────────────┐
+│    Qwen2.5-1.5B + LoRA + int4 量化      │
+│         显存占用 < 3GB                   │
+└─────────────────────────────────────────┘
+```
+
 ---
-base_model: Qwen/Qwen2.5-1.5B-Instruct
-library_name: peft
+
+## 实验与成果
+
+### 实验一：量化精度-资源权衡评估
+
+**目标**：在 4GB 显存约束下找到精度与资源的最优平衡点。
+
+| 指标 | FP16 | INT4 | 变化 |
+|------|:---:|:---:|:---:|
+| 模型显存 | 2955 MB | **739 MB** | -75.0% |
+| 总显存占用 | 3049 MB | **1201 MB** | -60.6% |
+| 推理速度 | 9.97 t/s | **11.89 t/s** | +19.2% |
+| RAG 准确率 | 100.0% | 90.0% | -10.0% |
+| Agent 准确率 | 85.0% | 80.0% | -5.0% |
+| 路由准确率 | 78.3% | 78.3% | 0% |
+
+**结论**：INT4 量化将显存压缩 75%、速度提升 19%，核心任务准确率仅下降 5-10%。在 4GB 设备上，这是唯一可行的全功能部署方案。
+
 ---
 
-# Model Card for Model ID
+### 实验二：RAG 检索策略消融
 
-<!-- Provide a quick summary of what the model is/does. -->
+**目标**：在小模型有限的上下文窗口下，找到最优检索配置。
 
+| 检索策略 | Top-1 命中率 | Top-3 命中率 | Recall |
+|---------|:---:|:---:|:---:|
+| Vector Only | 56% | 72% | 51.0% |
+| BM25 Only | 48% | 68% | 45.2% |
+| Hybrid (Vector + BM25) | 72% | 86% | 67.8% |
+| **Hybrid + Rerank** | **82%** | **92%** | **75.2%** |
 
+额外发现：
+- Chunk Size 从 80 增至 200 带来平均 9.5% 的召回增益，验证了语义完整性对检索的关键作用
+- Recall 提升 10% 但生成质量仅提升 4.5%，定位瓶颈在小模型的长上下文信息过滤能力，而非检索排序
 
-## Model Details
+**结论**：Hybrid Rerank 是小模型场景下的最优检索策略，Top-3 命中率 92% 为后续生成提供了高质量上下文。
 
-### Model Description
+---
 
-<!-- Provide a longer summary of what this model is. -->
+### 实验三：Agent 路由策略对比（500 条测试）
 
+**目标**：解决 1.5B 小模型在 ReAct 循环中的不稳定性问题。
 
+| 指标 | 直通车 (Direct) | ReAct 循环 | 差异 |
+|------|:---:|:---:|:---:|
+| 准确率 | **97.4%** | 56.0% | +41.4% |
+| 平均延迟 | **0.033s** | 27.25s | 827.8x 更快 |
+| 最大延迟 | 1.76s | 66.0s | — |
 
-- **Developed by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Model type:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
-- **Finetuned from model [optional]:** [More Information Needed]
+各工具类型对比：
 
-### Model Sources [optional]
+| 工具 | 直通车准确率 | ReAct 准确率 | 差异 |
+|------|:---:|:---:|:---:|
+| calc | 100.0% | 1.0% | +99.0% |
+| weather | 100.0% | 30.8% | +69.2% |
+| str_tools | 100.0% | 46.2% | +53.8% |
+| base_convert | 80.0% | 32.3% | +47.7% |
+| time | 100.0% | 53.8% | +46.2% |
 
-<!-- Provide the basic links for the model. -->
+**失败分析**：ReAct 循环失败案例中 53.6% 为 "Max steps reached"，证明 1.5B 模型在多步推理中容易陷入死循环。
 
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
+**结论**：对于小模型，分类器路由 + 直通调用是比 ReAct 循环更可靠的工具调用方案。
 
-## Uses
+---
 
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
+### 实验四：工具数量消融
 
-### Direct Use
+**目标**：验证工具数量增加是否会导致小模型路由混乱。
 
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
+| 工具数 | 直通车准确率 | ReAct 准确率 | 差异 |
+|:---:|:---:|:---:|:---:|
+| 3 | 99.2% | 29.3% | +69.9% |
+| 5 | 100.0% | 59.3% | +40.7% |
+| 8 | 96.4% | 44.3% | +52.1% |
+| 10 | 97.2% | 42.7% | +54.5% |
+| 12 | 97.4% | 45.6% | +51.8% |
 
-[More Information Needed]
+**结论**：直通车模式下，工具数量从 3 增加到 12，准确率始终保持 96%+，证明分类器路由对工具规模具有良好的扩展性。ReAct 循环则在工具增多时表现不稳定。
 
-### Downstream Use [optional]
+---
 
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
+### 实验五：LoRA 微调 + Prompt 压缩（200 条 SBS 对比）
 
-[More Information Needed]
+**目标**：用微调将长 Prompt 的知识"烧入"模型权重，实现更短 Prompt 下的更优表现。
 
-### Out-of-Scope Use
+| 指标 | 原生模型 + 长Prompt (282 tokens) | 微调模型 + 短Prompt (149 tokens) | 变化 |
+|------|:---:|:---:|:---:|
+| 工具调用准确率 | 80.5% | **85.5%** | +5.0% |
+| 答案准确率 | 55.0% | **63.5%** | +8.5% |
+| 格式正确率 | 90.5% | **98.5%** | +8.0% |
+| 平均延迟 | 10.26s | **9.01s** | -1.25s |
+| Prompt 开销 | 282 tokens | **149 tokens** | -47% |
 
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
+训练配置：
+- 数据：3000 条 SFT 样本（工具调用格式）
+- 参数：LoRA rank=8, alpha=16, 300 steps
+- 诊断：verify 模式确认微调模型+长Prompt 工具准确率 = 原生模型（93.5%），证明性能差异来自 Prompt 设计而非微调损伤
+
+DPO 偏好对比：微调胜 52 次 vs 原生胜 14 次，胜率比接近 4:1。
 
-[More Information Needed]
+**结论**：微调 + 短 Prompt 在每个维度都优于原生 + 长 Prompt。对于受限环境，这意味着用更少的上下文开销获得更好的效果。
 
-## Bias, Risks, and Limitations
+---
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
+## 受限环境下的设计总结
 
-[More Information Needed]
+| 受限环境的挑战 | 本项目的解决方案 | 量化效果 |
+|--------------|----------------|---------|
+| 显存不足 | INT4 量化 | 模型显存 -75%，总占用 < 3GB |
+| 上下文窗口小 | LoRA + Prompt 压缩 | Prompt 开销 -47%，准确率反升 |
+| 小模型推理不稳定 | 分类器路由 + 直通调用 | 准确率 97.4%，延迟 0.033s |
+| 无法使用重型向量库 | 自研 NumPy 向量存储 | 零外部依赖，Top-3 命中 92% |
+| 生成质量受限 | Hybrid Rerank 检索 | 为模型提供高密度上下文 |
 
-### Recommendations
+---
 
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
+## 快速开始
 
-Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
-
-## How to Get Started with the Model
-
-Use the code below to get started with the model.
-
-[More Information Needed]
-
-## Training Details
-
-### Training Data
-
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
-
-[More Information Needed]
-
-### Training Procedure
-
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
-
-#### Preprocessing [optional]
-
-[More Information Needed]
-
-
-#### Training Hyperparameters
-
-- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
-
-#### Speeds, Sizes, Times [optional]
-
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-[More Information Needed]
-
-## Evaluation
-
-<!-- This section describes the evaluation protocols and provides the results. -->
-
-### Testing Data, Factors & Metrics
-
-#### Testing Data
-
-<!-- This should link to a Dataset Card if possible. -->
-
-[More Information Needed]
-
-#### Factors
-
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
-
-[More Information Needed]
-
-#### Metrics
-
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
-
-[More Information Needed]
-
-### Results
-
-[More Information Needed]
-
-#### Summary
-
-
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-[More Information Needed]
-
-## Environmental Impact
-
-<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
-
-Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
-
-- **Hardware Type:** [More Information Needed]
-- **Hours used:** [More Information Needed]
-- **Cloud Provider:** [More Information Needed]
-- **Compute Region:** [More Information Needed]
-- **Carbon Emitted:** [More Information Needed]
-
-## Technical Specifications [optional]
-
-### Model Architecture and Objective
-
-[More Information Needed]
-
-### Compute Infrastructure
-
-[More Information Needed]
-
-#### Hardware
-
-[More Information Needed]
-
-#### Software
-
-[More Information Needed]
-
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
-
-**BibTeX:**
-
-[More Information Needed]
-
-**APA:**
-
-[More Information Needed]
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-[More Information Needed]
-
-## More Information [optional]
-
-[More Information Needed]
-
-## Model Card Authors [optional]
-
-[More Information Needed]
-
-## Model Card Contact
-
-[More Information Needed]
-### Framework versions
-
-- PEFT 0.7.1
+```bash
+# 安装依赖
+pip install -r requirement.txt
+
+# 运行（默认 int4 量化 + LoRA）
+python chat.py
+
+# 禁用 LoRA，对比原生效果
+python chat.py --lora none
+
+# 极低显存模式
+python chat.py -q gguf -m models/Qwen2.5-1.5B-GGUF
+```
+
+## 评估复现
+
+```bash
+# LoRA 微调 SBS 对比（200 条）
+python eval_sbs_compare.py
+
+# 诊断模式（分离 Prompt 影响 vs 模型能力）
+python eval_sbs_compare.py --verify
+
+# Agent 路由对比（500 条）
+python test_agent_benchmark.py
+
+# 工具数量消融
+python test_tool_ablation.py
+
+# RAG 检索消融
+python test_retrieval_ablation.py
+
+# 量化精度评估
+python test_quantization_eval.py
+```
+
+## 项目结构
+
+```
+NanoChat-Lab/
+├── chat.py                  # 主程序入口
+├── core/
+│   ├── llm.py              # LLM 推理（LoRA 热加载 + 5种量化）
+│   ├── ReActAgent.py       # ReAct 智能体（12 种工具）
+│   ├── input_classifier.py # 输入分类路由
+│   ├── memory_store.py     # LLM 驱动记忆系统
+│   ├── retriever.py        # 混合检索（Vector + BM25）
+│   ├── vector_store.py     # 自研 NumPy 向量库
+│   ├── bm25_store.py       # BM25 检索
+│   └── rerank.py           # Cross-Encoder 重排
+├── eval/
+│   ├── test_cases.jsonl    # 200 条测试用例
+│   └── results/            # 全部实验结果
+├── eval_sbs_compare.py     # SBS 对比评估框架
+├── test_agent_benchmark.py # Agent 路由对比实验
+├── test_tool_ablation.py   # 工具数量消融实验
+├── test_retrieval_ablation.py # RAG 检索消融实验
+├── test_quantization_eval.py  # 量化精度评估
+├── build_sft_data.py       # SFT 训练数据构建
+├── train_lora.py           # LoRA 微调脚本
+└── quantize_model.py       # 量化工具
+```
+
+## 工具列表
+
+| 工具 | 功能 | 示例输入 |
+|------|------|---------|
+| calc | 数学计算 | `print(3*8)` |
+| time | 当前时间 | 无需输入 |
+| weather | 天气查询 | `Beijing` |
+| convert | 单位换算 | `100km to miles` |
+| base_convert | 进制转换 | `255 to hex` |
+| solve | 方程求解 | `3*x+1=10` |
+| date | 日期计算 | `2025-07-05 + 30 days` |
+| weekday | 星期查询 | `2025-07-05` |
+| days_between | 日期间隔 | `2025-01-01, 2025-07-05` |
+| str_tools | 字符串操作 | `hello, len` |
+| random | 随机生成 | `dice 3` |
+| statistics | 统计计算 | `1,5,3,9,2, max` |
+
+## 硬件要求
+
+- **最低**：4GB 显存 GPU（GTX 1650 验证通过）或纯 CPU（GGUF 模式）
+- **推荐**：6GB+ 显存
+- RAM：8GB+
+- 磁盘：~5GB（模型 + 数据）
