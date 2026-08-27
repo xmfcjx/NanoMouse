@@ -1,0 +1,5 @@
+# EdgeOps CLI uses the Python standard library.
+# These packages enable the FastAPI service.
+fastapi>=0.110,<1
+uvicorn[standard]>=0.27,<1
+pydantic>=2.6,<3

@@ -1,0 +1,2 @@
+# Backward-compatible full installation.
+-r requirements-ml.txt

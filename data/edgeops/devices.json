@@ -1,0 +1,32 @@
+{
+  "AMR-07": {
+    "device_type": "warehouse_amr",
+    "status": "stopped_fault",
+    "battery_percent": 18,
+    "motor_temperature_c": 76,
+    "error_code": "E214",
+    "location": "warehouse-B3",
+    "current_task": "deliver-bin-42",
+    "last_seen": "2026-08-08T10:15:00+08:00"
+  },
+  "AMR-12": {
+    "device_type": "warehouse_amr",
+    "status": "idle",
+    "battery_percent": 82,
+    "motor_temperature_c": 41,
+    "error_code": null,
+    "location": "charging-zone-A1",
+    "current_task": null,
+    "last_seen": "2026-08-08T10:15:05+08:00"
+  },
+  "FORKLIFT-12": {
+    "device_type": "forklift",
+    "status": "available",
+    "battery_percent": 64,
+    "motor_temperature_c": 45,
+    "error_code": null,
+    "location": "warehouse-C2",
+    "current_task": "move-pallet-19",
+    "last_seen": "2026-08-08T10:14:51+08:00"
+  }
+}

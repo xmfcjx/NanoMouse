@@ -1,0 +1,55 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local model and training artifacts
+models/
+data/*
+!data/edgeops/
+!data/edgeops/**
+remote_results/
+training_results/
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# Keep only aggregate release evidence
+eval/results/**
+!eval/results/release/
+!eval/results/release/**
+
+# Local synchronization and experiment scratch files
+.checkpoint_selection_*
+.remote_sync_*
+*.tgz
+*.tar.gz
+*.log
+
+# Personal or historical local material
+cjx.tex
+useless/
+.claude/
+api.py
+api_test.py
+interview/*
+!interview/edgeops_project_story.md
+docs/FRONTIER_TECH_SELECTION.md
+docs/LOCAL_EVAL_STATUS_20260819.md
+docs/PROJECT_UNDERSTANDING.md
+docs/THEORETICAL_UPGRADE_PLAN.md
+docs/WINDOWS_MANUAL_HANDOFF.md
+docs/WORK_PLAN.md
+docs/EDGEOPS_TRAINING_TARGETS.md
+docs/eval_prompts/
+
+# Legacy local outputs
+error.txt
+compare_result.txt
+verify_result.txt
+result.txt
+training_result_11gb.json

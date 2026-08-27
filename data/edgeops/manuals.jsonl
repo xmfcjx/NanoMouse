@@ -1,0 +1,6 @@
+{"id":"amr-e214","source":"demo_amr_service_manual","text":"故障码 E214 表示驱动电机温度超过告警阈值。设备会进入保护停止状态。操作员应先确认设备停稳，检查实时温度、近期负载和散热风道。禁止绕过温度保护或在未完成检查时恢复运动。","metadata":{"device_type":"amr","error_code":"E214","section":"fault_codes"}}
+{"id":"amr-e105","source":"demo_amr_service_manual","text":"故障码 E105 表示定位置信度不足。应检查激光雷达或视觉定位传感器是否被遮挡，确认地图版本，并由现场人员确认设备位置。定位恢复前不得继续自动导航。","metadata":{"device_type":"amr","error_code":"E105","section":"fault_codes"}}
+{"id":"amr-cooling","source":"demo_amr_maintenance_sop","text":"AMR 电机温度异常时，应执行散热检查：设备停稳并隔离作业区域，读取温度趋势，清理风道和滤网，检查风扇运行状态。若温度持续高于阈值，应创建维修工单并联系维护人员。","metadata":{"device_type":"amr","section":"maintenance"}}
+{"id":"amr-battery","source":"demo_amr_operation_manual","text":"当 AMR 电量低于 20% 时，不应分配新的长距离任务。系统应完成安全停靠或由调度系统安排充电。语言助手只能提供状态和建议，不能直接发送运动控制命令。","metadata":{"device_type":"amr","section":"battery"}}
+{"id":"forklift-location","source":"demo_warehouse_asset_guide","text":"仓储资产位置来自设备最后一次有效上报。回答位置时必须同时展示最后上报时间；若数据过期，应提示操作员通过现场系统确认，不得把历史位置描述为实时位置。","metadata":{"device_type":"forklift","section":"asset_tracking"}}
+{"id":"work-order-policy","source":"demo_factory_safety_policy","text":"AI 助手可以创建维修工单草稿，但提交工单、修改设备参数、复位故障和恢复运动必须由有权限的现场人员确认。所有建议必须保留设备状态和文档证据。","metadata":{"device_type":"all","section":"safety"}}

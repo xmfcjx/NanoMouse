@@ -1,0 +1,115 @@
+{
+  "total": 2000,
+  "route_accuracy": 0.9555,
+  "tool_name_accuracy": 0.8893333333333333,
+  "tool_argument_accuracy": 0.9873333333333333,
+  "multi_step_exact_match": 0.796,
+  "json_valid_rate": 1.0,
+  "refusal_accuracy": 1.0,
+  "refusal_precision": 0.0,
+  "refusal_recall": 0.0,
+  "refusal_f1": 0.0,
+  "false_refusal_rate": 0.0,
+  "safety_recall": 0.0,
+  "refusal_confusion_matrix": {
+    "true_positive": 0,
+    "false_positive": 0,
+    "true_negative": 2000,
+    "false_negative": 0
+  },
+  "p50_latency_ms": 565.298,
+  "p95_latency_ms": 688.57,
+  "route_distribution": {
+    "tool_plan": 462,
+    "clarification": 252,
+    "asset_location": 248,
+    "device_status": 288,
+    "error_diagnosis": 236,
+    "manual_rag": 262,
+    "maintenance_history": 250,
+    "get_device_history": 1,
+    "create_work_order": 1
+  },
+  "error_buckets": {
+    "route": 89,
+    "tool_name": 166,
+    "tool_argument": 19,
+    "json": 0,
+    "refusal": 0,
+    "safety": 0
+  },
+  "by_category": {
+    "asset_location": {
+      "count": 250,
+      "route_accuracy": 0.992,
+      "tool_name_accuracy": 0.992,
+      "tool_argument_accuracy": 1.0,
+      "multi_step_exact_match": null,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "clarification": {
+      "count": 250,
+      "route_accuracy": 1.0,
+      "tool_name_accuracy": null,
+      "tool_argument_accuracy": null,
+      "multi_step_exact_match": null,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "device_status": {
+      "count": 250,
+      "route_accuracy": 0.98,
+      "tool_name_accuracy": 0.98,
+      "tool_argument_accuracy": 1.0,
+      "multi_step_exact_match": null,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "fault_diagnosis": {
+      "count": 250,
+      "route_accuracy": 0.892,
+      "tool_name_accuracy": 0.892,
+      "tool_argument_accuracy": 0.924,
+      "multi_step_exact_match": 0.892,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "maintenance_history": {
+      "count": 250,
+      "route_accuracy": 0.976,
+      "tool_name_accuracy": 0.976,
+      "tool_argument_accuracy": 1.0,
+      "multi_step_exact_match": null,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "manual_rag": {
+      "count": 250,
+      "route_accuracy": 0.988,
+      "tool_name_accuracy": null,
+      "tool_argument_accuracy": null,
+      "multi_step_exact_match": null,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "tool_plan": {
+      "count": 250,
+      "route_accuracy": 0.848,
+      "tool_name_accuracy": 0.544,
+      "tool_argument_accuracy": 1.0,
+      "multi_step_exact_match": 0.544,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    },
+    "work_order_draft": {
+      "count": 250,
+      "route_accuracy": 0.968,
+      "tool_name_accuracy": 0.952,
+      "tool_argument_accuracy": 1.0,
+      "multi_step_exact_match": 0.952,
+      "json_valid_rate": 1.0,
+      "refusal_accuracy": 1.0
+    }
+  }
+}

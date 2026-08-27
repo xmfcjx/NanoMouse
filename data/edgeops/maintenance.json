@@ -1,0 +1,32 @@
+{
+  "AMR-07": [
+    {
+      "date": "2026-07-28",
+      "action": "更换左轮编码器并完成定位标定",
+      "technician": "tech-03",
+      "work_order": "WO-20260728-017"
+    },
+    {
+      "date": "2026-07-10",
+      "action": "清理电机散热风道",
+      "technician": "tech-08",
+      "work_order": "WO-20260710-006"
+    }
+  ],
+  "AMR-12": [
+    {
+      "date": "2026-07-15",
+      "action": "季度预防性维护",
+      "technician": "tech-03",
+      "work_order": "WO-20260715-011"
+    }
+  ],
+  "FORKLIFT-12": [
+    {
+      "date": "2026-07-21",
+      "action": "检查电池组和制动系统",
+      "technician": "tech-05",
+      "work_order": "WO-20260721-009"
+    }
+  ]
+}
