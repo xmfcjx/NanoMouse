@@ -161,6 +161,10 @@ external holdout.
 Step 550 and step 600 produced identical metrics on the same stratified
 400-example subset, so additional late-stage training was not justified.
 
+The full modification record, prompt ablation, failure analysis, and evidence
+boundary are documented in
+[`V3_TOOLPLAN_EXPERIMENT.md`](V3_TOOLPLAN_EXPERIMENT.md).
+
 ## Evidence and Boundaries
 
 Release evidence is stored under `eval/results/release/`. The archived adapter

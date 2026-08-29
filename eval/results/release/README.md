@@ -22,3 +22,7 @@ are not published.
 `v3_rejected/` contains the aggregate 2,000-example dev summary for the v3
 route/tool candidate. It is retained as failure-analysis evidence. V3 did not
 pass promotion gates and is not a release artifact.
+
+See the
+[v3 toolplan experiment report](../../../docs/V3_TOOLPLAN_EXPERIMENT.md) for
+the modification, comparison, ablation, and rejection rationale.

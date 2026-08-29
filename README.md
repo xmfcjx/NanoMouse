@@ -81,8 +81,8 @@ to 97.2%, but regressed `fault_diagnosis` to 37.6% and reduced overall route
 accuracy from 95.35% to 85.60%. V3 therefore failed its promotion gates and was
 not tested on a new external holdout.
 
-See [the training status](docs/V2_TRAINING_STATUS.md) for the complete decision
-record and metric boundaries.
+See the [independent v3 experiment report](docs/V3_TOOLPLAN_EXPERIMENT.md) for
+the complete modification, ablation, failure analysis, and decision record.
 
 ## Quick Start
 
@@ -189,6 +189,7 @@ Detailed documents:
 - [完整中文项目说明](docs/PROJECT_GUIDE_ZH.md)
 - [第三方安装与配置](docs/INSTALLATION_ZH.md)
 - [V2 training and acceptance status](docs/V2_TRAINING_STATUS.md)
+- [V3 toolplan optimization experiment](docs/V3_TOOLPLAN_EXPERIMENT.md)
 - [Architecture](docs/ARCHITECTURE_EVOLUTION.md)
 - [Evaluation design](docs/EDGEOPS_EVAL_BENCHMARK.md)
 - [Training runbook](docs/EDGEOPS_REAL_TRAINING_RUNBOOK.md)
